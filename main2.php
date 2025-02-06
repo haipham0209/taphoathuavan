@@ -126,15 +126,15 @@ require "resources.php";
                     <div class="nav-menu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">ホームページ</a>
+                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">お店について</a>
+                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">About us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">マイページ</a>
+                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">My page</a>
                             </li>
-                            <li class="support-title mobile-only">サポート</li>
+                            <li class="support-title mobile-only">Bạn cần hỗ trợ?</li>
                             <li class="nav-item">
                                 <i class="fa fa-phone"></i><a class="support" href="tel:<?php echo htmlspecialchars($tel); ?>"><?php echo $tel; ?></a>
                             </li>
@@ -151,7 +151,7 @@ require "resources.php";
                     <!-- Search PC -->
                     <div class="input-pc">
                         <div class="search-container">
-                            <input type="text" id="searchInput" class="input-pc" placeholder="商品を検索" onkeypress="handleKeyPress(event)">
+                            <input type="text" id="searchInput" class="input-pc" placeholder="Tìm kiếm..." onkeypress="handleKeyPress(event)">
                             <img src="./images/search-icon.png" alt="Search Icon" class="search-icon" id="searchIcon" >
                         </div>
                     </div>
@@ -186,7 +186,7 @@ require "resources.php";
     <!--Search Mobile -->
     <div id="searchContainer" class="d-none">
         <div class="search-container">
-            <input type="text" id="searchInput" class="form-control" placeholder="商品を検索" onkeypress="handleKeyPress(event)">
+            <input type="text" id="searchInput" class="form-control" placeholder="Tìm sản phẩm..." onkeypress="handleKeyPress(event)">
             <img src="./images/search-icon.png" alt="Search Icon" class="search-icon" id="search1" onclick="performSearchFromInput()">
         </div>
     </div>
@@ -240,7 +240,7 @@ require "resources.php";
                     // Chuyển hướng đến trang tìm kiếm với từ khóa trong URL
                     window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
                 } else {
-                    alert('検索キーワードを入力してください。');
+                    alert('Vui lòng nhập từ khóa!');
                 }
             }
         });
@@ -252,7 +252,7 @@ require "resources.php";
                 // Chuyển hướng đến trang tìm kiếm
                 window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
             } else {
-                alert('検索キーワードを入力してください。');
+                alert('Vui lòng nhập từ khóa!');
             }
         });
         //click vào biểu tượng search icon Mobile
@@ -261,7 +261,7 @@ require "resources.php";
                 // Chuyển hướng đến trang tìm kiếm với từ khóa trong URL
                 window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
             } else {
-                alert('検索キーワードを入力してください。');
+                alert('Vui lòng nhập từ khóa!');
             }
         }
 
@@ -357,7 +357,7 @@ require "resources.php";
                                 data-aos="fade-up" 
                                 data-aos-duration="1000" 
                                 onclick="showMore(<?= htmlspecialchars(json_encode($category['products'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT)) ?>)">
-                                全て表示
+                                Xem thêm
                             </button>
                         <?php endif; ?>
                     </div>
@@ -400,7 +400,7 @@ require "resources.php";
     const buttonText = button.textContent.trim(); // Loại bỏ khoảng trắng thừa
 
     // Kiểm tra trạng thái của nút
-    if (buttonText === "全て表示") {
+    if (buttonText === "Xem thêm") {
         console.log("Hiển thị thêm sản phẩm");
 
         // Chỉ lấy các sản phẩm chưa hiển thị
@@ -441,8 +441,8 @@ require "resources.php";
         AOS.refresh();
 
         // Đổi nút thành Show Less
-        button.textContent = "閉じる";
-    } else if (buttonText === "閉じる") {
+        button.textContent = "Ẩn bớt";
+    } else if (buttonText === "Ẩn bớt") {
         console.log("Ẩn bớt sản phẩm");
 
         // Quay về trạng thái chỉ hiển thị 2 sản phẩm đầu tiên
@@ -488,7 +488,7 @@ require "resources.php";
         AOS.refresh();
 
         // Đổi nút thành Show More
-        button.textContent = "全て表示";
+        button.textContent = "Xem thêm";
     } else {
         console.log("1");
     }

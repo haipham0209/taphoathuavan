@@ -104,15 +104,15 @@ require "resources.php";
                     <div class="nav-menu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">ホームページ</a>
+                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">お店について</a>
+                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">About us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">マイページ</a>
+                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">My page</a>
                             </li>
-                            <li class="support-title mobile-only">サポート</li>
+                            <li class="support-title mobile-only">Bạn cần hỗ trợ?</li>
                             <li class="nav-item">
                                 <i class="fa fa-phone"></i><a class="support" href="tel:<?php echo htmlspecialchars($tel); ?>"><?php echo $tel; ?></a>
                             </li>
@@ -129,7 +129,7 @@ require "resources.php";
                     <!-- Search PC -->
                     <div class="input-pc">
                         <div class="search-container">
-                            <input type="text" id="searchInput" class="input-pc" placeholder="商品を検索" onkeypress="handleKeyPress(event)">
+                            <input type="text" id="searchInput" class="input-pc" placeholder="Tìm kiếm..." onkeypress="handleKeyPress(event)">
                             <img src="./images/search-icon.png" alt="Search Icon" class="search-icon" id="searchIcon" >
                         </div>
                     </div>
@@ -164,7 +164,7 @@ require "resources.php";
     <!--Search Mobile -->
     <div id="searchContainer" class="d-none">
         <div class="search-container">
-            <input type="text" id="searchInput" class="form-control" placeholder="商品を検索" onkeypress="handleKeyPress(event)">
+            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm..." onkeypress="handleKeyPress(event)">
             <img src="./images/search-icon.png" alt="Search Icon" class="search-icon" onclick="performSearch()">
         </div>
     </div>
@@ -218,7 +218,7 @@ require "resources.php";
                     // Chuyển hướng đến trang tìm kiếm với từ khóa trong URL
                     window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
                 } else {
-                    alert('検索キーワードを入力してください。');
+                    alert('Vui Lòng nhập từ khóa!');
                 }
             }
         });
@@ -230,7 +230,7 @@ require "resources.php";
                 // Chuyển hướng đến trang tìm kiếm
                 window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
             } else {
-                alert('検索キーワードを入力してください。');
+                alert('Vui Lòng nhập từ khóa!');
             }
         });
         //click vào biểu tượng search icon Mobile
@@ -239,7 +239,7 @@ require "resources.php";
                 // Chuyển hướng đến trang tìm kiếm với từ khóa trong URL
                 window.location.href = `search.php?sname=<?= urlencode($sname) ?>&query=${encodeURIComponent(query)}`;
             } else {
-                alert('検索キーワードを入力してください。');
+                alert('Vui Lòng nhập từ khóa!');
             }
         }
 
@@ -275,7 +275,7 @@ require "resources.php";
             <!-- Order History Section -->
             <div class="order-history">
                 <h2>
-                    <img src="./images/time.png" alt="History Icon" class="icon"> 注文履歴
+                    <img src="./images/time.png" alt="History Icon" class="icon"> Lịch sử
                 </h2>
                 <div class="order-items">
                     <img src="./images/no-image.png" alt="Order Item">
@@ -284,7 +284,7 @@ require "resources.php";
             <!-- Shopping Cart Section -->
             <div class="cart">
                 <h2>
-                    <img src="./images/shopping.png" alt="Cart Icon" class="icon"> 買い物カゴ
+                    <img src="./images/shopping.png" alt="Cart Icon" class="icon"> Giỏ Hàng
                 </h2>
                 <div class="cart-items">
                     <div class="cart-img">
@@ -292,17 +292,17 @@ require "resources.php";
                     </div>
                     <div class="cart-info">
                         <div class="cart-details">
-                            <p>1アイテム</p>
-                            <p>1,500¥</p>
+                            <p>1 Item</p>
+                            <p>20000 đ</p>
                         </div>
-                        <button class="buy-button">ご購入</button>
+                        <button class="buy-button">Mua</button>
                     </div>
                 </div>
             </div>
             <!-- Favorites Section -->
             <div class="favorites">
                 <h2>
-                    <img src="./images/black-heart.png" alt="Favor Icon" class="icon"> お気に入りリスト
+                    <img src="./images/black-heart.png" alt="Favor Icon" class="icon"> Danh sách yêu thích
                 </h2>
                 <div class="favor-items">
                     <img src="./images/no-image.png" alt="Favor Item">
@@ -335,7 +335,7 @@ require "resources.php";
             const modal = document.getElementById("loginRegisterModal");
 
             // Hiển thị modal khi trang được tải
-            modal.style.display = "block";
+            // modal.style.display = "block";
 
             
         });

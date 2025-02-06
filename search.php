@@ -121,15 +121,15 @@ require "resources.php";
                     <div class="nav-menu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">ホームページ</a>
+                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">お店について</a>
+                                <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">About us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">マイページ</a>
+                                <a class="nav-link" href="./myPage2.php?sname=<?= urlencode($sname) ?>">My page</a>
                             </li>
-                            <li class="support-title mobile-only">サポート</li>
+                            <li class="support-title mobile-only">Bạn cần hỗ trợ?</li>
                             <li class="nav-item">
                                 <i class="fa fa-phone"></i><a class="support" href="tel:<?php echo htmlspecialchars($tel); ?>"><?php echo $tel; ?></a>
                             </li>
@@ -146,7 +146,7 @@ require "resources.php";
                     <!-- Search PC -->
                     <div class="input-pc">
                         <div class="search-container">
-                            <input type="text" id="searchInput" class="input-pc" placeholder="商品を検索" onkeypress="handleKeyPress(event)">
+                            <input type="text" id="searchInput" class="input-pc" placeholder="Tìm kiếm..." onkeypress="handleKeyPress(event)">
                             <img src="./images/search-icon.png" alt="Search Icon" class="search-icon" id="searchIcon" >
                         </div>
                     </div>
@@ -289,7 +289,7 @@ require "resources.php";
 
     <!-- Nội dung trang -->
     <main>
-        <h1>検索結果</h1>
+        <h1>Kết quả tìm kiếm : </h1>
 
         <?php if ($query): ?>
             <p>商品名：<strong><?= $query ?></strong></p>
@@ -326,13 +326,13 @@ require "resources.php";
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>一致する結果が見つかりませんでした。</p> <!-- "Không tìm thấy kết quả phù hợp." -->
+                    <p>Không có kết quả tìm kiếm</p> <!-- "Không tìm thấy kết quả phù hợp." -->
                 <?php endif; ?>
             </div>
 
 
         <?php else: ?>
-            <p>検索キーワードを入力してください。</p>
+            <p>Vui lòng nhaajo từ khóa</p>
         <?php endif; ?>
     </main>
 
