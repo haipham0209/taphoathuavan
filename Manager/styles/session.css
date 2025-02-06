@@ -1,0 +1,85 @@
+/* Đặt lại một số mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Hiệu ứng overlay mờ */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* backdrop-filter: blur(5px); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Hộp thông báo (modal) */
+  .modal {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Tiêu đề */
+  .modal h1 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Nội dung */
+  .modal p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Nút */
+  .modal button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #74ebd5;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal button:hover {
+    background: #66d4c0;
+  }
+  
+  /* Hiệu ứng mờ dần */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

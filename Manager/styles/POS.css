@@ -1,0 +1,468 @@
+/* @media only screen and (max-width: 767px) { */
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        /* background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff); */
+        background-color: #B0D9B1;
+        background-size: 400% 400%;
+        animation: wave 10s ease infinite;
+    }
+    /* @keyframes wave {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    } */
+    .main-navbar {
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #e3f3e1;
+        border-radius: 8px;
+    }
+    .home {
+        margin: 0 10px 0 10px;
+        margin-left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .drawingBuffer {
+        position: absolute; /* Hoặc giữ nguyên nếu đã dùng */
+        top: 0;
+        left: 0;
+        z-index: 1; /* Đặt thấp hơn các input fields */
+        pointer-events: none; /* Vô hiệu hóa tương tác với chuột */
+    }
+
+    /* //////////////////////////////////////////////////// */
+    /* Định dạng tổng thể cho .total */
+.total {
+    display: flex;               /* Sử dụng flexbox để căn chỉnh các phần tử */
+    flex-direction: column;      /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: flex-start;     /* Canh trái các phần tử */
+    /* gap: 10px;                   Khoảng cách giữa các phần tử */
+    padding: 10px;               /* Khoảng cách bên trong */
+    border: 1px solid #ddd;      /* Đường viền nhẹ */
+    border-radius: 8px;          /* Bo góc */
+    background-color: #f9f9f9;   /* Màu nền nhạt */
+    width: 300px;                /* Đặt chiều rộng cố định */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+    font-family: Arial, sans-serif; /* Font chữ đẹp và dễ đọc */
+}
+
+/* Định dạng cho các đoạn văn bản trong .total */
+.total .totalp {
+    font-size: 19px;             /* Kích thước chữ */
+    font-weight: bold;           /* Chữ đậm */
+    color: #333;                 /* Màu chữ */
+    margin: 0;                   /* Bỏ khoảng cách trên/dưới */
+}
+
+/* Định dạng cho input */
+#received-amount {
+    padding: 5px;                /* Khoảng cách bên trong */
+    font-size: 19px;             /* Kích thước chữ */
+    width: 100%;                 /* Chiếm toàn bộ chiều rộng của container */
+    border: 1px solid #ccc;      /* Đường viền nhạt */
+    border-radius: 4px;          /* Bo góc */
+    background-color: #fff;      /* Màu nền trắng */
+    outline: none;               /* Bỏ viền outline khi focus */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Hiệu ứng lõm */
+    transition: border-color 0.3s; /* Hiệu ứng khi hover/focus */
+}
+
+/* Hiệu ứng khi hover hoặc focus input */
+#received-amount:hover,
+#received-amount:focus {
+    border-color: #038610;       /* Đổi màu viền khi hover hoặc focus */
+    box-shadow: 0 0 5px rgba(3, 134, 16, 0.5); /* Ánh sáng xanh nhẹ */
+}
+
+/* Định dạng cho span hiển thị giá trị */
+.total span {
+    font-weight: bold;           /* Chữ đậm */
+    color: #038610;              /* Màu xanh lá nổi bật */
+}
+
+/* Định dạng cho nhãn label */
+label[for="received-amount"] {
+    font-weight: normal;         /* Chữ thường */
+    color: #555;                 /* Màu chữ nhạt hơn */
+}
+
+/* /////////////////////////////////////////////// */
+    
+
+    /* //////////////////////////table////////////////////////////////// */
+    button.delete-btn {
+        /* background-color: black; */
+        background: none;
+        color: black;
+        border: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    /* //////////////////////////////////////////////////////////// */
+    /* Đảm bảo các nút nằm ngang hàng */
+.btn_container {
+    display: flex;          /* Sử dụng Flexbox */
+    justify-content: space-between; /* Tạo khoảng cách giữa hai nút */
+    margin-top: 20px;       /* Khoảng cách phía trên */
+}
+
+/* Thiết lập style cơ bản cho nút */
+.button-pay {
+    flex: 1;                /* Để hai nút chiếm đều chiều ngang */
+    padding: 10px 20px;     /* Kích thước nút */
+    font-size: 16px;        /* Cỡ chữ */
+    border: none;           /* Xóa viền */
+    border-radius: 5px;     /* Bo góc */
+    cursor: pointer;        /* Hiệu ứng con trỏ */
+    margin: 0 10px;          /* Khoảng cách giữa hai nút */
+}
+
+/* Tùy chỉnh từng nút */
+.clear-btn {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f8d7da; /* Màu đỏ nhạt */
+    color: #721c24;           /* Màu chữ đỏ đậm */
+}
+
+.complete-btn {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    background-color: #d4edda; /* Màu xanh nhạt */
+    color: #155724;           /* Màu chữ xanh đậm */
+}
+
+/* Thêm hiệu ứng hover */
+.button-pay:hover {
+    opacity: 0.9;
+}
+/* //////////////////////////////////////// */
+.table-wrapper {
+    max-height: 320px;
+    overflow-y: auto;
+    margin-top: 10px;
+    width: 100%;
+    
+    /* Bo góc nhẹ */
+    border-radius: 8px;
+
+    /* Đổ bóng phía dưới bên phải */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Viền mỏng để tạo điểm nhấn */
+    border: 1px solid #e0e0e0;
+
+    /* Thêm nền trắng để tách biệt với nền */
+    background-color: #ffffff;
+}
+
+    /* Hiệu ứng làm mờ dần và thu nhỏ hàng trước khi xóa */
+.fade-out {
+    opacity: 0; /* Làm mờ dần */
+    transform: scaleY(0); /* Thu nhỏ dần chiều cao */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng kéo dài 0.3s */
+}
+
+    
+    /* Đảm bảo bảng luôn chiếm hết chiều rộng */
+    #product-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #product-table th,
+    #product-table td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+    
+    /* Làm nổi bật header */
+    #product-table thead {
+        background-color: #f5f5f5;
+        position: sticky; /* Cố định tiêu đề khi cuộn */
+        top: 0;
+        z-index: 1;
+    }
+    
+
+    
+/* Màu nền xen kẽ các dòng */
+#product-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu xám nhạt */
+}
+
+#product-table tbody tr:nth-child(odd) {
+    background-color: #fff; /* Màu trắng */
+}
+
+/* Hiệu ứng làm nổi bật */
+#product-table tbody tr.highlight {
+    animation: highlightEffect 1.5s ease-out;
+}
+
+@keyframes highlightEffect {
+    0% {
+        /* background-color: rgba(); Màu xanh nhạt   */
+        background-color: #45a049;
+    }
+    100% {
+        background-color: inherit; /* Quay lại màu gốc */
+    }
+}
+
+/* Đặt độ rộng nhỏ hơn cho cột "数量" */
+#product-table th.num, 
+#product-table td.num {
+    width: 50px; /* Chiều rộng cột số lượng */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+#product-table tbody td.num input {
+    max-width: 40px; /* Đặt kích thước ô nhập liệu */
+    text-align: center;
+}
+
+/* Đặt độ rộng nhỏ hơn cho cột "数量" */
+#product-table th.num1, 
+#product-table td.num1 {
+    width: 50px; /* Chiều rộng cột số lượng */
+    text-align: center; /* Căn giữa nội dung */
+    display: none;
+}
+
+#product-table tbody td.num1 input {
+    max-width: 40px; /* Đặt kích thước ô nhập liệu */
+    text-align: center;
+}
+
+/* Căn chỉnh tổng thể */
+#product-table th,
+#product-table td {
+    text-align: left;
+    padding: 8px;
+}
+/* /////////////////////////////////////////table///////////////////////////////// */
+
+    #suggestionList {
+        border: 1px solid #ccc;
+        max-width: 300px;
+        max-height: 200px;
+        overflow-y: auto;
+        position: absolute;
+        background: white;
+        z-index: 1000;
+    }
+
+    #suggestionList div {
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    #suggestionList div:hover {
+        background-color: #f0f0f0;
+    }
+
+    .search-scan {
+        position: relative;
+        width: 70%;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 10px 5px 10px 5px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
+    .search-bar:focus {
+        border-color: #038610; /* Đổi màu viền khi focus */
+        outline: none;
+    }
+    .suggestions-list {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background: white;
+        border: 1px solid #ccc;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 100;
+    }
+    
+    .suggestion-item {
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .suggestion-item:hover {
+        background-color: #f0f0f0;
+    }
+    
+    /* Định dạng ảnh camera */
+    .camera-icon {
+        position: absolute;
+        text-align: right;
+        right: 0px;
+        top: 50%;
+        justify-content: right;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+    .camera-icon:hover {
+        opacity: 1; /* Hiệu ứng hover */
+    }
+
+    .main-home {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logo {
+        font-size: 24px;
+        margin: auto;
+        padding-left: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+    #camera {
+        display: none;
+        margin: 4px;
+        width: 320px;
+        height: 240px;
+        background: #ccc;
+        position: relative;
+        margin: auto; /* Căn giữa nếu cần */
+    }
+    video {
+        margin-top: 3px;
+        width: 100%;
+        /* Hoặc chiều rộng cụ thể */
+        height: 100%;
+        /* Hoặc chiều cao cụ thể */
+        object-fit: contain;
+        /* overflow-clip-margin: content-box; */
+        /* overflow: clip; */
+    }
+    #stopBtn {
+        position: absolute;
+        bottom: 10px; /* Đặt nút ở dưới cùng */
+        left: 50%;
+        transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+        padding: 5px 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+    }
+   /* POS Container Styling */
+    main {
+        margin: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        margin: 0px;
+    }
+    .id-time {
+        height: 20px;
+        display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử */
+        justify-content: space-between; /* Đẩy mã khách hàng sang trái và ngày giờ sang phải */
+        align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+        /* margin-bottom: 20px; Thêm khoảng cách dưới nếu cần */
+    }
+    #customer-id {
+
+        font-size: 18px;
+        text-align: left;
+    }
+    #datetime {
+        text-align: right;
+        font-size: 13px;
+    }
+    #datetime p {
+        margin: 0; /* Xóa margin mặc định */
+    }
+
+    /* Product Table Styling */
+    #product-table {
+        width: 100%;
+        border-collapse: collapse;
+        /* margin-top: 1    px; */
+        background-color: #fff;
+    }
+
+
+
+    #product-table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    #product-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    #product-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+    #product-table th, #product-table td {
+        text-align: center; /* Căn giữa theo chiều ngang */
+        vertical-align: middle; /* Căn giữa theo chiều dọc */
+        padding: 6px;
+        /* text-align: left; */
+        border: 1px solid #ddd;
+    }
+    /* Payment Form Styling */
+    #payment-form {
+        display: flex; 
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #payment-form p {
+        /* font-size: 13px; */
+        margin: 5px 0;
+    }
+    
+    .total{
+        width: 100%;
+    }
+    #received-amount {
+        padding: 5px;
+        font-size: 13px;
+        width: 100px;
+    }
+    .total{
+        text-align: right;
+    }
+
+    #payment-method {
+        padding: 5px;
+        font-size: 13px;
+        width: 45%;
+    }
+
+    
+/* } */

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録成功</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .notification-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .email-icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+        .login-button {
+    display: inline-block;
+    background-color: #007BFF; /* Màu nền của nút */
+    color: white; /* Màu chữ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo tròn góc */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-size: 16px; /* Kích thước chữ */
+    margin-top: 15px; /* Khoảng cách phía trên */
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="notification-container">
+    <div class="email-icon">📧</div>
+    <h1>メールをチェックしてください。</h1>
+    <p>認証リンクをお送りしました。メールを開いてリンクをクリックし、アカウントを有効化してください。</p>
+    <p>メールが見つからない場合、<b>迷惑メール</b>フォルダや<b>ゴミ箱</b>フォルダを確認してください。</p>
+    <a href="./StoreLogin.php" class="button login-button">ログイン画面へ</a>
+
+    <a href="mailto:wrb@co.jp" class="button">サポート</a>
+</div>
+
+</body>
+</html>

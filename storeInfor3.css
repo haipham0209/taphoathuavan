@@ -1,0 +1,69 @@
+header{
+    background-color: #f8f9fa;
+}
+.fa{
+    color: black !important;
+}
+h3{
+    color: black;
+    font-size: 25px;
+
+}
+.logobar {
+    display: flex; /* Căn giữa hình ảnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang (nếu cần) */
+    /* height: 80%;  */
+    padding: 0 25px;
+}
+.account-toggle{
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 250px; 
+    height: auto;
+}
+
+.store-info {
+    color: #333;
+}
+
+/* About Store Section */
+.about-store {
+    text-align: left; 
+    margin: 0 30px 0 30px;
+}
+
+.about-store h2 {
+    font-size: 20px;
+    font-weight: 600;
+    /* margin-bottom: 10px; */
+    text-align: left;
+}
+
+.about-store p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* Social Media Section */
+.social-media {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 5px; */
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,750 @@
+       
+@media only screen and (max-width: 767px) {
+    main {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        animation: wave 10s ease infinite;
+        margin: 0;
+        background-color: #B0d9b1;
+        /* background: linear-gradient(135deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0)); */
+        background-size: 100% 100%;
+        overflow-y: auto;
+    }
+    /* Đặt logo vào một container có vị trí tương đối */
+    .logo-container {
+
+        position: relative;
+        display: inline-block; /* Để nút có thể chồng lên logo */
+        
+    }
+
+    /* Căn chỉnh logo */
+    .logo-container img {
+        width: 450px; /* Chiều rộng cố định */
+        height: 150px; /* Chiều cao cố định */
+        display: block;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Định dạng và căn chỉnh nút đổi logo */
+    #changeLogoButton {
+        position: absolute;
+        bottom: -20px; /* Chồng lên 1/4 phần dưới của logo */
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: transparent; */
+        color: #363131;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    /* 容器 */
+    .container {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: #fff;
+    }
+
+    .profile-form {
+        padding: 30px;
+        border-radius: 20px;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* background-color: white; */
+    }
+
+    /* Avatar */
+    .avatar {
+        position: relative;
+        width: 198px;
+        margin: 0 auto 10px;
+        /* margin: 10px auto; */
+        /* Đảm bảo khung chứa đủ kích thước SVG */
+        /* margin: 60px auto 40px; */
+        /* Căn giữa avatar trong container */
+    }
+
+    /* Nút tải lên */
+    .upload-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #B0D9B1;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+
+    .upload-button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    /* Các phần còn lại */
+    .input-field {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #000;
+        font-size: 16px;
+        background-color: transparent;
+    }
+
+    /* 表单区域 */
+
+    /* .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .form .form-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .form label {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        width: 50px;
+    }
+
+    .form input {
+        border: none;
+        border-bottom: 2px solid #333;
+        padding: 8px;
+        font-size: 16px;
+        outline: none;
+        background: transparent;
+        flex-grow: 1;
+    }
+
+    .form .form-row .icon {
+        margin-left: auto;
+        width: 20px;
+        /* Adjust the size of the icon as needed */
+    /* height: auto;
+    } */
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        /* gap: 20px; */
+    }
+
+    .form-row {
+        /* display: flex; */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form label {
+        font-size: 18px;
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .form input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        margin: 3px;
+    }
+
+    .form .form-row .icon {
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .icon_1 {
+        width: 30px;
+    }
+
+    .group {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Modal background */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent background */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        /* Ensure it appears on top */
+    }
+
+    /* Modal content box */
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 90%;
+        position: relative;
+    }
+
+    /* Close button styling */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Form styling inside the modal */
+    .modal-content label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .modal-content input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .confirm-btn {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background-color: #4CAF50;
+        /* Green */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .save-button {
+        background-color: rgb(30, 170, 65);
+        color: white;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .save-button img {
+        width: 50px;
+        height: auto;
+    }
+
+    /* .save {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .save-button {
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        width: 91px;
+        height: 67px;
+        background-color: #B0D9B1;
+    }
+
+    .save-button img {
+        width: 60px;
+        height: 67px;
+        object-fit: contain;
+    } */
+
+    .edit-password-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .store-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+   
+    footer a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    .back_button img {
+        margin-right: 2px;
+        width: 70px;
+        height: 70px;
+    }
+
+    /* アカウント削除ボタンのスタイル */
+    .delete-button {
+        margin-top: 10px;
+        padding: 10px;
+        width: 100%;
+        background-color: #FF6B6B;
+        /* 赤色 */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .delete-button:hover {
+        background-color: #FF4C4C;
+    }
+
+    .user-logo {
+        width: 198px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .edit-password-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-password-link button {
+        background-color: #3f4e40;
+        /* グリーン */
+        color: white;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
+   
+
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+/* Styles for larger PC screens */
+@media only screen and (min-width: 768px) {
+    header{
+        justify-self: start;
+        margin: 15px 0 0 15px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #B0d9b1;
+        overflow-y: auto;
+    }
+    main{
+        margin: auto;
+        max-width: 40%;
+        justify-content: center;
+    }
+
+    .container {
+        background-color: white;
+        /* margin-top: 30px; */
+        border-radius: 10px;
+        margin: 0 0 40px 0;
+        
+        /* background-color: #ccc; */
+        display: flex;
+        align-items: stretch; /* Căn giữa nút */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+
+    p{
+        justify-self: center;
+    }
+    .profile-form {
+        padding: 10px 30px 30px 30px;
+        border-radius: 20px;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+    /* Định dạng và căn chỉnh nút đổi logo */
+#changeLogoButton {
+    position: absolute;
+    bottom: -20px; /* Chồng lên 1/4 phần dưới của logo */
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: transparent; */
+    color: #363131;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+
+/* Đặt logo vào một container có vị trí tương đối */
+.logo-container {
+    margin: auto;
+    justify-self: center;
+    position: relative;
+    display: inline-block; /* Để nút có thể chồng lên logo */
+    /* max-width: 200px; */
+
+}
+
+/* Căn chỉnh logo */
+.logo-container img {
+    width: 300px; /* Chiều rộng cố định */
+    height: 200px; /* Chiều cao cố định */
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Định dạng và căn chỉnh nút đổi logo */
+/* #changeLogoButton {
+    position: absolute;
+    bottom: 0%; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: #363131;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+} */
+
+.back_button img {
+    margin-right: 2px;
+    width: 70px;
+    height: 70px;
+}
+
+/* Hiệu ứng hover */
+
+
+    /* Avatar */
+    .avatar {
+        display: flex;
+        justify-content: center;
+        /* margin-bottom: 40px; */
+    }
+
+    .avatar svg {
+        width: 198px;
+        height: 107px;
+    }
+    /* llottie */
+#lottie{
+    margin-top: 0;
+    width: 50%;
+    height: 50%;
+}
+svg {
+    margin-top: 0;
+  width: 0px; /* Chiều rộng mong muốn */
+  height: 0px; /* Chiều cao mong muốn */
+}
+
+/* end lottie */
+
+    .upload-button {
+        position: absolute;
+        top: 10%;
+        left: 45%;
+        margin-top: 20px;
+        background-color: #B0D9B1;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .upload-button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    /* Form */
+    .form {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-row {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form label {
+        font-size: 18px;
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .form input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        margin: 3px;
+    }
+
+    .form .form-row .icon {
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .icon_1 {
+        width: 30px;
+    }
+
+    .group {
+        display: flex;
+        align-items: center;
+    }
+
+    .save {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Save button */
+    .save-button {
+        background-color: rgb(30, 170, 65);
+        color: white;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .save-button img {
+        width: 50px;
+        height: auto;
+    }
+
+    .edit-password-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-password-link button {
+        background-color: #3f4e40; 
+        /* グリーン */
+        color: white;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
+
+
+
+    /* Modal styling */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 90%;
+        position: relative;
+    }
+
+    .modal-content label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .modal-content input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .modal .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .confirm-btn {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background-color: #4CAF50;
+        /* Green */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Store link */
+    .store-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .store-link a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+    }
+
+    /* Delete button */
+    .delete-button {
+        background-color: #FF6B6B;
+        color: white;
+        border: none;
+        font-size: 16px;
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .delete-button:hover {
+        background-color: #FF4C4C;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    footer img {
+        width: 25px;
+        height: 25px;
+    }
+}

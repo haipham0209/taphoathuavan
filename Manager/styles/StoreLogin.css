@@ -1,0 +1,394 @@
+@media only screen and (max-width: 767px) {
+    * {
+        margin: 0.5px;
+        padding: 0.5px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+        background-size: 400% 400%;
+        animation: wave 10s ease infinite;
+        margin: 0;
+        padding-bottom: 40px;
+        position: relative;
+        overflow-y: auto;
+    }
+
+    @keyframes wave {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo h1 {
+        font-size: 48px;
+        margin: 0;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .logo p {
+        font-size: 18px;
+        font-style: italic;
+        margin: 0;
+        color: #333;
+    }
+
+    .login-form {
+        padding: 30px;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .login-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .login-form input {
+        font-weight: bold;
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #d2e7d3;
+    }
+
+    .login-form button {
+        background-color: black;
+        color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    .login-form button:hover {
+        background-color: #0ee3bf;
+    }
+
+    /* form-row全体の調整 */
+    .form-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* カスタムチェックボックス */
+    .custom-checkbox {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        /* user-select: none; */
+        color: #333;
+    }
+
+    /* チェックボックス自体は隠す */
+    .custom-checkbox input {
+        display: none;
+    }
+
+    #loading{
+        display: none;
+         position: fixed; 
+         top: 0; left: 0;
+          width: 50%; 
+          height: 50%; 
+          background: rgba(255, 255, 255, 0.8); 
+          justify-content: center; align-items: center;
+    }
+
+    /* チェックマーク部分のスタイル */
+    .custom-checkbox .checkmark {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        margin-right: 8px;
+        display: inline-block;
+        transition: background-color 0.3s, border-color 0.3s;
+        vertical-align: middle; /* チェックマークの垂直位置を調整 */
+    }
+
+    /* チェックされたときのスタイル */
+    .custom-checkbox input:checked+.checkmark {
+        background-color: #0ee3bf;
+        border-color: #0ee3bf;
+        position: relative;
+    }
+
+    /* チェックマークの表示 */
+    .custom-checkbox input:checked+.checkmark::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .register-link {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .register-link a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .register-link a:hover {
+        color: #0ee3bf;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    footer img {
+        margin-right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Giao diện PC */
+@media only screen and (min-width: 768px) {
+    /* Toàn màn hình */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+        background-size: 400% 400%;
+        animation: wave 10s ease infinite;
+        /* margin: 0; */
+        overflow-y: auto;
+        padding-top: 35px;
+        /* padding-bottom: 20px; */
+    }
+
+    /* Container */
+    .container {
+        width: 400px;
+        /* height: 70vh; */
+        max-height: 600px; /* Đặt giới hạn chiều cao nhỏ hơn */
+        padding: 15px 20px; /* Giảm khoảng padding bên trong */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Logo */
+    .logo {
+        margin-bottom: 5px; /* Giảm khoảng cách dưới logo */
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 36px; /* Giảm kích thước font của logo */
+        margin: 0;
+        color: #333;
+    }
+
+    .logo p {
+        font-size: 16px; /* Giảm kích thước font của slogan */
+        font-style: italic;
+        color: #333;
+        margin-top: 4px;
+    }
+
+    /* Login form */
+    .login-form {
+        width: 100%;
+        /* margin-top: 10px; */
+    }
+
+    .login-form h2 {
+        font-size: 20px; /* Giảm kích thước tiêu đề */
+        text-align: center;
+        margin-bottom: 10px; /* Giảm khoảng cách dưới tiêu đề */
+    }
+
+    .login-form label {
+        font-size: 14px; /* Giảm kích thước font nhãn */
+        margin-bottom: 4px; /* Giảm khoảng cách dưới nhãn */
+    }
+
+    .login-form input {
+        width: 95%;
+        padding: 8px; /* Giảm padding trong input */
+        /* margin-top: 5px; Giảm khoảng cách trên */
+        margin-bottom: 5px; /* Giảm khoảng cách dưới */
+        font-size: 14px;
+        border-radius: 6px;
+        background-color: #d2e7d3;
+        border: 1px solid #ccc;
+    }
+
+    .login-form button {
+        font-size: 14px; /* Giảm kích thước font nút */
+        padding: 8px; /* Giảm padding của nút */
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
+        margin: 10px 0;
+    }
+    
+
+    .login-form button:hover {
+        background-color: #0ee3bf;
+    }
+
+    /* Form row */
+    .form-row {
+        margin-top: 5px; /* Giảm khoảng cách trên của form-row */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+    /* Custom checkbox */
+    .custom-checkbox {
+        display: flex;
+        align-items: center; /* Căn các yếu tố trong cùng một hàng ngang */
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .custom-checkbox input{
+        display: none;
+
+    }
+    .custom-checkbox .checkmark {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        margin-right: 8px; /* Khoảng cách giữa checkbox và văn bản */
+        display: inline-block;
+        transition: background-color 0.3s, border-color 0.3s;
+        vertical-align: middle;
+    }
+/* チェックされたときのスタイル */
+.custom-checkbox input:checked+.checkmark {
+    background-color: #0ee3bf;
+    border-color: #0ee3bf;
+    position: relative;
+}
+
+/* チェックマークの表示 */
+.custom-checkbox input:checked+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+    .register-link {
+        font-size: 12px; /* Giảm kích thước font của link đăng ký */
+        margin-top: 10px; /* Giảm khoảng cách trên */
+        text-align: center;
+    }
+.register-link .pass{
+    font-size: 18px;
+}
+
+/* llottie */
+#lottie{
+      width: 500px;
+      height: 500px;
+}
+svg {
+    width: 500px; /* Chiều rộng mong muốn */
+    height: 500px; /* Chiều cao mong muốn */
+  }
+
+/* end lottie */
+    footer {
+        padding: 5px;
+        text-align: left;
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    footer img {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,124 @@
+header{
+    background-color: #f8f9fa;
+}
+.fa{
+    color: black !important;
+}
+
+
+
+
+
+
+
+
+.logobar {
+    display: flex; /* Căn giữa hình ảnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang (nếu cần) */
+    /* height: 80%;  */
+    padding: 0 25px;
+}
+.account-toggle{
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 250px; 
+    height: auto;
+}
+
+.store-info {
+    color: #333;
+}
+
+/* About Store Section */
+.about-store {
+    text-align: left; 
+    margin: 0 30px 0 30px;
+}
+
+.about-store h2 {
+    font-size: 20px;
+    /* margin-bottom: 10px; */
+    text-align: left;
+}
+
+.about-store p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Social Media Section */
+.social-media {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 5px; */
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    header {
+        height: 80px;
+        /* height: 100px; */
+        position: sticky;
+        /* top: 0; */
+        background-color: #8cc69e; /* Xanh nhạt giống hình ảnh */
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+    }
+    .nav-menu {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    /* height: 100%; */
+    background-color: #6fa883;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .logobar img{
+    width: 400px;
+    height: 90px;
+    margin-right: 20px;
+}
+.nav-menupc{
+    margin-left: 320px;
+}
+.account-toggle{
+    margin-right: 20px;
+    margin-bottom: 28px;
+}
+.account-toggle img{
+    margin-right: 20px;
+}
+}

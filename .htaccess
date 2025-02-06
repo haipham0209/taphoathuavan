@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+
+# Nếu truy cập vào thư mục Manager mà không có file cụ thể, chuyển hướng đến main.php
+RewriteRule ^Manager/?$ Manager/main.php [L]

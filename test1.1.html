@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>QuaggaJS Barcode Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #camera {
+            width: 100%;
+            max-width: 640px;
+            border: 1px solid #ccc; /* Thêm đường viền cho camera */
+            border-radius: 5px; /* Bo góc cho camera */
+            overflow: hidden; /* Ẩn phần ngoài camera */
+        }
+        video {
+            width: 100%;
+            height: auto; /* Đảm bảo video có chiều cao tự động */
+        }
+        h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quét mã Barcode</h1>
+    <div id="camera"></div>
+    <p id="result"></p> <!-- Khu vực hiển thị mã đã quét -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
+    <script>
+        const quaggaConf = {
+            inputStream: {
+                target: document.querySelector("#camera"),
+                type: "LiveStream",
+                constraints: {
+                    width: { min: 640 },
+                    height: { min: 480 },
+                    facingMode: "environment",
+                    aspectRatio: { min: 1, max: 2 }
+                }
+            },
+            decoder: {
+                readers: ['code_128_reader', 'ean_reader'] // Thêm nhiều loại mã nếu cần
+            },
+        };
+
+        Quagga.init(quaggaConf, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Quagga initialized successfully!");
+            Quagga.start();
+        });
+
+        Quagga.onDetected(function (result) {
+            const code = result.codeResult.code;
+            document.getElementById("result").textContent = "Mã đã quét: " + code; // Hiển thị mã quét
+            alert("Detected barcode: " + code); // Thông báo khi phát hiện mã
+        });
+    </script>
+</body>
+</html>

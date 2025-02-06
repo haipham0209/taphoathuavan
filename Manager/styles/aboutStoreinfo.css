@@ -1,0 +1,190 @@
+
+/* Mobile screen*/
+@media only screen and (max-width: 767px) {
+ /* CSS chính */
+#storeForm {
+    width: 600px; /* Chiều rộng form mặc định cho PC */
+    margin: 0 auto; /* Căn giữa form */
+}
+
+.descriptionContainer {
+    margin-bottom: 15px;
+}
+
+.descriptionGroup {
+    border: 1px solid #ccc; /* Đường viền cho khung */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong khung */
+    margin-bottom: 5px; /* Khoảng cách giữa các khung */
+    background-color: #f9f9f9b6; /* Màu nền cho khung */
+    position: relative;
+}
+
+.removeDescription {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 10px; /* Cách từ trên xuống */
+    right: 15px; /* Cách từ bên phải vào */
+    background: none; /* Không có nền */
+    border: none; /* Không có đường viền */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+}
+
+.delete-icon {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 10px; /* Cách từ trên xuống */
+    right: 15px; /* Cách từ bên phải vào */
+    width: 15px; /* Kích thước hình ảnh */
+    height: 15px; /* Kích thước hình ảnh */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua hình ảnh */
+}
+
+label {
+    display: block; /* Đặt label ở dòng mới */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Đậm chữ label */
+}
+
+input[type="text"],
+textarea {
+    width: 100%; /* Đảm bảo input và textarea chiếm toàn bộ chiều rộng container */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    white-space: pre-wrap; /* Xử lý xuống dòng */
+    word-wrap: break-word; /* Tự động ngắt dòng nếu vượt quá chiều rộng */
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#addDescription {
+    margin-bottom: 5px; /* Giảm khoảng cách giữa nút "Add More" và nút "Submit" */
+}
+
+/* Media Query cho Mobile */
+@media (max-width: 768px) {
+    #storeForm {
+        width: 90%; /* Chiều rộng linh hoạt trên mobile */
+    }
+
+    .descriptionGroup {
+        padding: 10px; /* Giảm padding để tiết kiệm không gian */
+    }
+
+    .removeDescription,
+    .delete-icon {
+        top: 5px; /* Điều chỉnh vị trí trên mobile */
+        right: 10px;
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 8px; /* Giảm padding để phù hợp hơn với màn hình nhỏ */
+    }
+
+    textarea {
+        min-height: 60px; /* Giảm chiều cao textarea trên mobile */
+    }
+
+    button {
+        padding: 8px 12px; /* Giảm kích thước nút */
+    }
+
+    label {
+        font-size: 14px; /* Giảm kích thước chữ label */
+    }
+}
+
+}
+/* PC screen*/
+@media only screen and (min-width: 767px) {
+    #storeForm {
+        width: 600px; /* Thay đổi chiều rộng form */
+        margin: 0 auto; /* Căn giữa form */
+    }
+    
+    .descriptionContainer {
+        margin-bottom: 15px;
+    }
+    
+    .descriptionGroup {
+        border: 1px solid #ccc; /* Đường viền cho khung */
+        border-radius: 5px; /* Bo góc */
+        padding: 15px; /* Khoảng cách bên trong khung */
+        margin-bottom: 5px; /* Khoảng cách giữa các khung */
+        background-color: #f9f9f9b6; /* Màu nền cho khung */
+        position: relative;
+    }
+    
+    .removeDescription {
+        position: absolute; /* Đặt vị trí tuyệt đối */
+        top: 10px; /* Cách từ trên xuống */
+        right: 15px; /* Cách từ bên phải vào */
+        background: none; /* Không có nền */
+        border: none; /* Không có đường viền */
+        cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    }
+    
+    .delete-icon {
+        position: absolute; /* Đặt vị trí tuyệt đối */
+        top: 10px; /* Cách từ trên xuống */
+        right: 15px; /* Cách từ bên phải vào */
+        width: 15px; /* Kích thước hình ảnh */
+        height: 15px; /* Kích thước hình ảnh */
+        cursor: pointer; /* Con trỏ chuột khi di chuột qua hình ảnh */
+    }
+    
+    label {
+        display: block; /* Đặt label ở dòng mới */
+        margin-bottom: 5px; /* Khoảng cách dưới label */
+        font-weight: bold; /* Đậm chữ label */
+    }
+    
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px; 
+        box-sizing: border-box; 
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+        white-space: pre-wrap; /* Xử lý xuống dòng */
+        word-wrap: break-word; /* Tự động ngắt dòng nếu vượt quá chiều rộng */
+    }
+    
+    textarea {
+        min-height: 80px;
+        resize: vertical; 
+    }
+    
+    button {
+        background-color: #000000; 
+        color: white; 
+        padding: 10px 15px; 
+        border: none; 
+        border-radius: 4px;
+        cursor: pointer; 
+    }
+    
+    button:hover {
+        background-color: #45a049; 
+    }
+    #addDescription {
+        margin-bottom: 5px; /* Giảm khoảng cách giữa nút "Add More" và nút "Submit" */
+    }
+}

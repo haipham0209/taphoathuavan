@@ -1,0 +1,336 @@
+
+*{
+    outline: none;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    position: relative;
+    outline: none;
+}
+
+/* 容器樣式 */
+.container {
+    width: 100%;
+    max-width: 400px;
+    flex-direction: row-reverse;
+    text-align: center;
+    padding-bottom: 40px;
+    border: none;
+    outline: none;
+}
+
+/* 左侧菜單欄 */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    align-content: center;
+    align-items: center;
+    
+}
+
+/* 按鈕設計 */
+.menu-button {
+    background-color: #f1f1f1;
+    margin: 1px;
+    border: none;
+    border-radius: 12px;
+    height: 110px;
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ từ dưới phải */
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+}
+button:disabled {
+    background-color: #e7d9d9;
+    opacity: 0.8; 
+    cursor: not-allowed; /* Thay đổi con trỏ để chỉ rõ rằng nút không thể bấm */
+    box-shadow: none;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2); /* Bóng đổ từ dưới phải */
+}
+
+
+.menu-button span {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.menu-button:hover {
+    background-color: #e8f5e9;
+    transform: scale(1.05);
+}
+
+/* 按鈕圖形 */
+.icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Logo */
+.logo {
+    padding-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    /* margin: 30px 0; */
+    
+}
+
+.logo h1 {
+    font-style: italic;
+    margin: 0;
+    font-size: 50px;
+    color: #333;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 18px;
+    font-style: italic;
+    color: #666;
+}
+
+/* 日期區 */
+.date-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.date-button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); */
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.date-button:hover {
+    background-color: #e0e0e0;
+}
+
+.date-picker {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+/* 財務資訊區塊 */
+.financial-info {
+    /* margin-top: 20px; */
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+}
+
+/* 每一行 (売り上げ、利益) 使用 Flex 對齊 */
+.row {
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px 0; */
+    line-height: 2;
+}
+
+/* Label 部分對齊 */
+.label {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* 手機螢幕設計 */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        height: 100%;
+    }
+
+    .menu-button {
+        font-size: 30px;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* ------------------------------log out--------------------------------- */
+    /* Định dạng tổng thể cho phần chứa nút */
+    .logout-container {
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .logout-button {
+        text-decoration: none;
+        background-color: #f44336;
+        color: #fff;
+        padding: 14px 28px;
+        font-size: 20px;
+        border-radius: 12px;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ từ dưới phải */
+    }
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+}
+}
+
+
+
+
+/* Styles for larger PC screens */
+@media (min-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #b0d9b1;
+        height: 100vh; /* Chiều cao của body bằng 100% chiều cao màn hình */
+    
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        height: calc(100vh - 40px); /* Trừ đi margin của container */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Cân đối không gian giữa các phần tử */
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; /* Cho phép menu có thể wrap xuống khi cần thiết */
+    }
+
+    .menu-button {
+        width: 150px;
+        height: 150px;
+        border-radius: 15px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-button span {
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size: 32px;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 60px;
+        color: #222;
+    }
+
+    .logo p {
+        font-size: 24px;
+        color: #555;
+    }
+
+    .date-control {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .date-button {
+        padding: 15px 20px;
+        font-size: 24px;
+    }
+
+    .date-picker {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+
+    .financial-info {
+        font-size: 26px;
+        color: #333;
+        text-align: center;
+    }
+
+    .row {
+        line-height: 3;
+    }
+
+    .label {
+        font-size: 22px;
+    }
+
+    .logout-container {
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .logout-button {
+        text-decoration: none;
+        background-color: #f44336;
+        color: #fff;
+        padding: 14px 28px;
+        font-size: 20px;
+        border-radius: 12px;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ từ dưới phải */
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer img {
+        width: 40px;
+        height: 40px;
+    }
+}

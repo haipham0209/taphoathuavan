@@ -1,0 +1,7 @@
+Array
+(
+    [productId] => 2
+    [storeId] => 9
+    [discountRate] => 20
+    [discountedPrice] => 160.00
+)

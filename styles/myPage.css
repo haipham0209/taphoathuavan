@@ -1,0 +1,420 @@
+@media only screen and (max-width: 767px) {
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: 'Murecho', sans-serif;
+        height: 100%; /* Tăng chiều cao để kiểm tra cuộn */
+        z-index: 10;
+    }
+    header{
+        background-color: #f8f9fa;
+     }
+     .avatar {
+         /* margin-right: 20px; */
+         width: 40px;
+         height: 40px;
+         /* border-radius: 50%; */
+         cursor: pointer;
+     }
+        /* Ẩn  theo mặc định */
+     .nav-myPage.open {
+         width: 100px;
+         margin-right: 25px;
+         margin-top: 10px;
+     }
+     
+     .nav-myPage.open ul {
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: column;
+         align-content: center;
+         margin-left: 10px;
+         padding: 0;
+         text-align: left;
+     }
+     .hidden {
+         display: none;
+     }
+     
+     .overlay-avatar {
+         position: fixed;
+         top: 0;
+         left: 0; 
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0); /* Trong suốt */
+         display: none; /* Mặc định ẩn */
+         z-index: 999; /* Trên nội dung khác, nhưng dưới menu */
+     }
+     
+     /* Khi avatar mở thì overlay hiển thị */
+     .nav-myPage.open + .overlay {
+         display: block;
+     }
+     
+     /* =============================END nav avatar------------------------------ */
+         /* ---------------------------------nav button ------------------------------------- */
+         .avatar-toggle {
+             border: none;
+             background: none;
+             margin-right: 20px;
+             border-radius: 50px;
+             position: relative;
+         }
+         
+         .avatar {
+             display: inline-block;
+         }
+         
+     /* --------------------------------end nav button----------------------------------------- */
+     
+     .order-history, .cart, .favorites {
+         margin:auto;
+         justify-content: center; 
+         width: 90%;
+         background-color: rgba(255, 255, 255, 0.568);
+         border-radius: 15px;
+         padding: 20px;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+     }
+     
+     /* Phần của từng mục (lịch sử, giỏ hàng, danh sách yêu thích) */
+     .order-history, .cart, .favorites {
+         margin-top: 25px;
+         margin-bottom: 25px;
+         padding-bottom: 15px;
+         border-bottom: 1px solid #e0e0e0;
+     }
+     
+     .order-history:last-child, .cart:last-child, .favorites:last-child {
+         border-bottom: none;
+     }
+     
+     /* Tiêu đề của mỗi phần (có icon) */
+     h2 {
+         display: flex;
+         align-items: center;
+         font-size: 1.1em;
+         font-weight: bold;
+         color: #333;
+         margin-bottom: 15px;
+     }
+     
+     .icon {
+         width: 24px;
+         height: 24px;
+         margin-right: 10px;
+         vertical-align: middle;
+     }
+     
+     /* Hình ảnh sản phẩm */
+     .order-items img, .cart-items img, .favor-items img {
+         width: 100px;   /* Chiều rộng cố định */
+         height: 150px;  /* Chiều cao cố định */
+         object-fit: cover; /* Giúp hình ảnh không bị méo, giữ nguyên tỉ lệ và cắt theo khung */
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     }
+     
+     /* Cart Section */
+     .cart-items {
+         display: flex;
+         flex-direction: column; /* Chuyển thành cột để ảnh ở trên */
+         margin-bottom: 10px;
+     }
+     
+     /* Phần chi tiết và nút mua hàng */
+     .cart-info {
+         display: flex;
+         justify-content: space-between;  /* Chi tiết bên trái, nút bên phải */
+         width: 100%;
+         margin-top: 10px;
+         align-items: center;
+     }
+     
+     .cart-details {
+         text-align: left;
+         font-size: 0.9em;
+         color: #555;
+         flex-grow: 1; /* Giúp phần chi tiết chiếm hết không gian còn lại */
+     }
+     
+     .buy-button {
+         background-color: #000000;
+         color: #fff;
+         border: none;
+         padding: 8px 15px;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+     }
+     
+     .buy-button:hover {
+         background-color: #1a8531;
+     }
+     
+     /* Favorites section (danh sách yêu thích) */
+     .favor-items {
+         display: flex;
+         justify-content: space-between;
+         gap: 10px;
+     }
+     
+}
+
+@media only screen and (min-width: 767px) {
+    header {
+        background-color: #f8f9fa;
+    }
+    
+    .avatar {
+        width: 60px; /* Tăng kích thước ảnh đại diện */
+        height: 60px;
+        cursor: pointer;
+    }
+    
+    .nav-myPage.open {
+        width: 100%; 
+        margin-right: 30px;
+        margin-top: 15px;
+    }
+    
+    .nav-myPage.open ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        margin-left: 15px;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .overlay-avatar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Tăng độ mờ để dễ nhìn */
+        display: none;
+        z-index: 999;
+    }
+    .mypage-container{
+        width: 90%;
+    }
+    .nav-myPage.open + .overlay {
+        display: block;
+    }
+    
+    /* Avatar toggle button */
+    .avatar-toggle {
+        border: none;
+        background: none;
+        margin-right: 30px; /* Tăng khoảng cách */
+        border-radius: 50px;
+        position: relative;
+    }
+    
+    .order-history, .cart, .favorites {
+        margin: 30px auto;
+        justify-content: center;
+        width: 100%; /* Giảm chiều rộng để trông cân đối trên PC */
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        padding: 30px; /* Tăng khoảng cách bên trong */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .order-history, .cart, .favorites {
+        margin-top: 20px; /* Tăng khoảng cách giữa các phần */
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #ddd;
+    }
+    
+    .order-history:last-child, .cart:last-child, .favorites:last-child {
+        border-bottom: none;
+    }
+    
+    h2 {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em; /* Tăng kích thước font */
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    .icon {
+        width: 30px; /* Tăng kích thước icon */
+        height: 30px;
+        margin-right: 15px;
+        vertical-align: middle;
+    }
+    
+    .order-items img, .cart-items img, .favor-items img {
+        width: 150px; /* Tăng kích thước hình ảnh */
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cart-items {
+        display: flex;
+        flex-direction: row; /* Chuyển thành hàng ngang cho PC */
+        gap: 20px; /* Thêm khoảng cách giữa các mục */
+        margin-bottom: 20px;
+    }
+    
+    .cart-info {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        align-items: center;
+    }
+    
+    .cart-details {
+        text-align: left;
+        font-size: 1em; /* Tăng kích thước chữ */
+        color: #555;
+        flex-grow: 1;
+    }
+    
+    .buy-button {
+        position: absolute; /* Đặt nút ở góc dưới bên phải */
+        bottom: 0;
+        right: 0;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        padding: 10px 20px; /* Tăng kích thước nút */
+        font-size: 1em; /* Tăng kích thước chữ trên nút */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .buy-button:hover {
+        background-color: #1a8531;
+    }
+    
+    .favor-items {
+        display: flex;
+        justify-content: flex-start; /* Sắp xếp các mục về bên trái */
+        gap: 20px; /* Tăng khoảng cách giữa các mục */
+    }
+    
+}
+
+
+@media only screen and (min-width: 767px) {
+    .navbar .logobar img{
+        width: 100%;
+        height: 90px;
+        margin-right: 20px;
+    }
+    .nav-menupc{
+        margin-left: 370px;
+    }
+}
+
+ /* Footer */
+ footer {
+    margin-top: 50px;
+    background-color: #f8f9fa;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+/* Social Media Section */
+.social-media {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 5px; */
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 50px;
+    height: 50px;
+}
+/* Modal */
+.modalTitle {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Ẩn modal theo mặc định */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 5px 0 5px;
+}
+
+.modal-buttons .btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.modal-buttons .btn-primary {
+    background-color: #000000;
+    color: white;
+}
+
+.modal-buttons .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}

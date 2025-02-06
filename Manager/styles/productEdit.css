@@ -1,0 +1,347 @@
+@media only screen and (max-width: 767px) {
+
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0));
+        background-size: 100% auto; /* Để nền tự điều chỉnh chiều cao */
+        background-repeat: no-repeat;
+    }
+
+    /* CSS thêm cho icon thùng rác */
+    #deleteIcon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Container của form */
+    .addContainer {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 84%;
+        /* max-height: 30%; */
+        margin: 0 auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    /* Tiêu đề */
+    h3 {
+        text-align: center;
+        color: #333;
+        font-size: 35px;
+    }
+
+    /* Nhãn và trường nhập */
+    label {
+        font-weight: bold;
+        margin-top: 3x;
+        display: block;
+    }
+
+    main {
+        overflow-y: auto;
+        /* Chỉ cuộn nội dung trong main */
+    }
+    .head {
+        display: flex; /* Đặt các phần tử con trong .head nằm ngang hàng */
+        align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+        justify-content: center; /* Căn giữa toàn bộ div theo chiều ngang */
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+        margin: 0 auto; /* Căn giữa toàn bộ div nếu nó có chiều rộng cố định */
+        text-align: center; /* Căn giữa nội dung văn bản (nếu cần) */
+    }
+    
+    .head h3 {
+        margin: 25px; /* Loại bỏ margin mặc định của h3 */
+        font-size: 36px; /* Đặt kích thước chữ */
+    }
+    
+    .head .home {
+        width: 36px; /* Đặt chiều rộng ảnh */
+        height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+    }
+    
+    
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 2.5px;
+        margin: 2px 0 2px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        /* Đảm bảo padding không làm tăng kích thước tổng thể */
+    }
+
+    #categoryText {
+        margin: 0;
+        border-right: solid 0px;
+        height: 25px;
+        width: 74%;
+    }
+
+    #category {
+        margin: 0;
+        width: 24%;
+        height: 25px;
+    }
+
+    /* Nút submit */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .imgDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .imageContainer {
+        /* display: flex; */
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        /* margin-top: 10px; */
+    }
+
+    #imagePreview {
+        max-width: 200px;
+        margin-right: 10px;
+        align-items: center;
+    }
+
+    #editButton {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+
+
+    /* //////////////barcode/////////////////////// */
+    #barcode-scanner {
+        width: 100%;
+        /* Hoặc chiều rộng cụ thể */
+        height: 100px;
+        /* Hoặc chiều cao cụ thể */
+        display: none;
+        /* Ẩn khi không sử dụng */
+        background-color: black;
+    }
+
+    video {
+        width: 100%;
+        /* Hoặc chiều rộng cụ thể */
+        height: 95px;
+        /* Hoặc chiều cao cụ thể */
+        object-fit: contain;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+
+    #barcode-scanner__dashboard_section {
+        display: none;
+
+    }
+
+    .drawingBuffer {
+        display: none;
+    }
+
+    /* #start-scan {
+    
+} */
+    /* ///////////////////////////end barcode//////////////////////////////// */
+}
+@media only screen and (min-width: 768px) {
+
+    body {
+        font-family: Arial, sans-serif;
+        width: 100%;
+        min-height: 100vh; /* Đảm bảo chiếm ít nhất chiều cao của màn hình */
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0));
+        background-size: 100% auto; /* Để nền tự điều chỉnh chiều cao */
+        background-repeat: no-repeat;
+    }
+    .head {
+        display: flex; /* Đặt các phần tử con trong .head nằm ngang hàng */
+        align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+        justify-content: center; /* Căn giữa toàn bộ div theo chiều ngang */
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+        margin: 0 auto; /* Căn giữa toàn bộ div nếu nó có chiều rộng cố định */
+        text-align: center; /* Căn giữa nội dung văn bản (nếu cần) */
+    }
+    
+    .head h3 {
+        margin: 45px; /* Loại bỏ margin mặc định của h3 */
+        font-size: 36px; /* Đặt kích thước chữ */
+    }
+    
+    .head .home {
+        width: 46px; /* Đặt chiều rộng ảnh */
+        height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+    }
+
+    /* CSS cho icon thùng rác */
+    #deleteIcon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Container của form */
+    .addContainer {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 60%;
+        margin: 20px auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    /* Tiêu đề */
+    h3 {
+        text-align: center;
+        color: #333;
+        font-size: 45px;
+    }
+
+    /* Nhãn và trường nhập */
+    label {
+        font-weight: bold;
+        margin-top: 5px;
+        display: block;
+    }
+
+    main {
+        overflow-y: auto;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #categoryText {
+        margin: 0;
+        height: 30px;
+        width: 74%;
+        padding: 4px; 
+        font-size: 16px; 
+        border-right: 0px solid transparent;
+    }
+    
+    #category {
+        margin: 0;
+        width: 24%;
+        height: 30px; 
+        padding: 4px; 
+        font-size: 16px; 
+    }
+
+    /* Nút submit */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .imgDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .imageContainer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #imagePreview {
+        max-width: 300px;
+        margin: 0 auto; /* Đặt khoảng cách tự động để căn giữa */
+        display: block; 
+    }
+
+    #editButton {
+        padding: 5px 15px;
+        cursor: pointer;
+    }
+
+    /* barcode scanner */
+    #barcode-scanner {
+        width: 100%;
+        height: 150px;
+        background-color: black;
+    }
+
+    video {
+        width: 100%;
+        height: 140px;
+        object-fit: contain;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+
+    #barcode-scanner__dashboard_section {
+        display: none;
+    }
+
+    .drawingBuffer {
+        display: none;
+    }
+}

@@ -1,0 +1,313 @@
+/* Reset styles */
+@media only screen and (max-width: 767px) {
+    
+    * {
+        margin: 0.5px;
+        padding: 0.5px;
+        box-sizing: border-box;
+    }
+    header{
+        /* margin-top: 105px; */
+        padding-top: 105px;
+    }
+    
+    body {
+        /* background: linear-gradient(135deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0)); */
+        /* background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff); */
+        background-size: 100% 100%;
+        /* animation: wave 10s ease infinite; */
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        overflow: hidden; /* Ẩn cuộn của body */
+        display: flex;
+        flex-direction: column;  
+    }
+    main{
+        /* background: linear-gradient(115deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0)); */
+        /* s */
+        /* margin-top: 105px; */
+        flex: 1; /* Chiếm phần còn lại của chiều cao body */
+        /* padding-top: 60px; Để không gian cho header */
+        overflow-y: auto; /* Chỉ cuộn nội dung trong main */
+    }
+    
+    footer{
+        margin: 5px;
+        padding: 0px;
+        padding: 20px;
+        /* background-color: #ccc; */
+    }
+   
+    /* @keyframes wave {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    } */
+    .logo-div {
+        width: 150px; /* Kích thước theo yêu cầu */
+        height: 50px; /* Kích thước theo yêu cầu */
+        overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài div */
+        display: flex; /* Giúp căn chỉnh hình ảnh */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+    
+    #logo-main {
+        width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều ngang */
+        height: 100%; /* Chiếm toàn bộ chiều cao */
+        object-fit: cover; /* Giữ tỉ lệ gốc và cắt hình ảnh nếu cần */
+        padding-top: 2px;
+    }
+    
+
+    h1.logo {
+        font-family: 'Gloria Hallelujah', sans-serif; 
+        /* font-family: "Lavishly Yours", cursive; */
+        font-size: 1.3em;
+        color: #2c3e50;
+        text-align: center;
+        letter-spacing: 1px;
+        /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); */
+        margin: 0.1px;
+        padding: 0.1px;
+        /* margin: 20px 0; */
+    }
+    h2 {
+
+        /* font-family: "Gloria Hallelujah", cursive; */
+                /* font-family: 'Gloria Hallelujah', sans-serif;  */
+        font-size: 2em;
+        color: #2c3e50;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        margin: 5px 0;
+    }
+    /* category title */
+    h3.title {
+        /* font-family: 'Gloria Hallelujah', sans-serif; */
+        font-family: "Lavishly Yours", cursive;
+        font-size: 2em;
+        color: #2c3e50;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        margin: 5px 0;
+    }
+    
+    
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* align-items: flex-end; */
+        margin: 5px;
+        padding: 10px 20px;
+        padding: 10px;
+        padding-top: 2px;
+        /* background-color: aqua; */
+        /* background: #79ac78; */
+        /* background: linear-gradient(115deg, rgba(121, 200, 120, 0), #79ac78, rgba(121, 200, 120, 0)); */
+        background-size: 400% 400%;
+        /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
+        border-bottom: solid 1.5px rgb(255, 255, 255);
+        font-size: 25px;
+        height: 105px;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        margin: 0;
+        /* padding: 0; */
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+    
+    }
+    
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        margin: 8px;
+    }
+    .account-toggle {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 45px; /* Chiều rộng nút */
+        height: 45px; /* Chiều cao nút */
+        padding: 0; /* Xóa khoảng cách mặc định */
+        padding-top: 25px;
+        align-items: flex-end;
+    }
+    
+    .account-toggle img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        /* border-radius: 50%;  */
+        
+    }
+    
+    .search-bar {
+        width: 90%;
+        height: 35px;
+        /* padding: 5px; */
+        border-radius: 5px;
+        padding-right: 40px; /* Chừa khoảng trống cho biểu tượng kính lúp */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-image: url('../images/search-icon.png');
+        background-size: 20px 20px; /* Kích thước của biểu tượng */
+        background-position: right 10px center; /* Vị trí bên phải, căn giữa theo chiều dọc */
+        background-repeat: no-repeat;
+        cursor: pointer; /* Chỉ tay khi rê chuột vào */
+        
+    }
+
+    .logo-container {
+        flex: 1; /* Chiếm hết phần còn lại của navbar */
+        display: flex;
+        flex-direction: column; /* Logo trên, search dưới */
+        align-items: center;
+        gap: 5px;
+        margin-left: 1px;
+        padding: 0;
+    }
+    
+    .search-bar:focus {
+    outline: none; /* Tùy chọn: bỏ đường viền khi focus */
+    }
+    
+    .search-bar:hover {
+    opacity: 1; /* Hiển thị rõ hơn khi rê chuột */
+    }
+    
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    /* =========================nav menu================================== */
+    
+    /* Ẩn menu theo mặc định */
+    .nav-menu {
+        background-color: white;
+        /* margin-top: 105px; */
+        position: fixed;
+        /* top: 70px; */
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.9); */
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+        transition: left 0.7s ease;
+        z-index: 1000;
+        border-radius: 5px 15px 15px 0; /* Bo góc bên phải trên và dưới */
+    }
+    
+    /* Khi menu được mở */
+    .nav-menu.open {
+        left: 0;
+        margin-left: 0;
+    }
+    
+    /* Danh sách menu */
+    .nav-menu ul {
+        font-family: "Itim", cursive;
+        margin-top: 50px;
+        margin-left: 10px;
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .nav-menu ul li {
+        font-family: "Itim", cursive;
+        margin: 30px 0;
+    }
+    
+    .nav-menu ul li a {
+        text-decoration: none;
+        color:black;
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    
+    
+    .hidden {
+        display: none;
+    }
+    
+    .overlay {
+        z-index: 1053; /* Cao hơn nội dung khác */
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        display: none;
+
+
+        /* position: fixed;
+        top: 0; */
+        /* left: 0; Chạy từ 80% màn hình */
+        /* width: 100%;
+        height: 100%; */
+        /* background: rgba(0, 0, 0, 0.5); Trong suốt */
+        /* display: none; Mặc định ẩn */
+        /* z-index: 999; Trên nội dung khác, nhưng dưới menu */
+    }
+    
+    /* Khi menu mở thì overlay hiển thị */
+    .nav-menu.open + .overlay {
+        display: block;
+    }
+    .support-title {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        border-bottom: 1px solid black; /* Gạch chân */
+    }
+    
+    
+    /* =============================END nav menu------------------------------ */
+        /* ---------------------------------nav button ------------------------------------- */
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 24px; /* Adjust size as needed */
+            cursor: pointer;
+            margin-right: 3px;
+            margin-left: 3px;
+        }
+        
+        .menu-icon {
+            display: inline-block;
+        }
+        
+        .menu-icon.open::before {
+            content: '✖'; /* X symbol */
+        }
+        
+        .menu-icon::before {
+            content: '☰';
+        }
+        /* --------------------------------end nav button----------------------------------------- */
+    
+    }
+    /* Reset margin/padding */
+    html {
+        margin: 0;
+        padding: 0;
+        touch-action: manipulation; /* Ngăn nhấp đúp để zoom */
+      }
+      
