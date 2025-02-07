@@ -19,7 +19,7 @@ include('./php/auth_check.php');
     <div class="container">
         <!-- ロゴ部分 -->
         <div class="logo">
-            <a href="../main2.php?sname=<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>"><img id="logo" src="<?php echo htmlspecialchars($_SESSION['logopath'] ?? 'default-logo.png'); ?>" alt="Logo" style="width: 240px; height: 80px; padding: 5px; border-radius: 5px;" /></a>
+            <a href="../?sname=<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>"><img id="logo" src="<?php echo htmlspecialchars($_SESSION['logopath'] ?? 'default-logo.png'); ?>" alt="Logo" style="width: 240px; height: 80px; padding: 5px; border-radius: 5px;" /></a>
         </div>
 
         <!-- 左側のボタンメニュー -->

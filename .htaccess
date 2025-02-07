@@ -3,3 +3,7 @@ RewriteEngine On
 
 # Nếu truy cập vào thư mục Manager mà không có file cụ thể, chuyển hướng đến main.php
 RewriteRule ^Manager/?$ Manager/main.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ index.php?sname=$1 [L,QSA]

@@ -99,12 +99,12 @@ require "resources.php";
                         <span class="bar"></span>
                     </div>
                 </button>
-                <a class="navbar-brand" href="./main2.php?sname=<?= urlencode($sname) ?>"><img id="logoContainer" src="<?= $logopath ?>" alt="logo"></a>
+                <a class="navbar-brand" href="./?sname=<?= urlencode($sname) ?>"><img id="logoContainer" src="<?= $logopath ?>" alt="logo"></a>
                 <div class="menu">
                     <div class="nav-menu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="./main2.php?sname=<?= urlencode($sname) ?>">Trang Chủ</a>
+                                <a class="nav-link" href="./?sname=<?= urlencode($sname) ?>">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./storeInfor3.php?sname=<?= urlencode($sname) ?>">About us</a>
