@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->addAddress($email, $username);
             $mail->CharSet = 'UTF-8'; // Thiết lập mã hóa UTF-8
         
-            $verify_link = "https://taphoathuavan.com/taphoathuavan/Manager/php/account_verify.php?token=" . urlencode($token);
+            $verify_link = "https://www.taphoathuavan.com/taphoathuavan/Manager/php/account_verify.php?token=" . urlencode($token);
         
             $mail->isHTML(true);
             $mail->Subject = 'アカウント登録ありがとうございます - スマラクシステム';

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // リセットリンクの作成
         // $reset_link = "https://click.ecc.ac.jp/ecc/se2a_24_bugs/we%20are/Manager/ResetPassword.php?token=" . urlencode($token);
-        $reset_link = "https://taphoathuavan.com/taphoathuavan/Manager/ResetPassword.php?token=" . urlencode($token);
+        $reset_link = "https://www.taphoathuavan.com/taphoathuavan/Manager/ResetPassword.php?token=" . urlencode($token);
 
         // メールの送信
         $mail = new PHPMailer\PHPMailer\PHPMailer(true);
