@@ -69,9 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $stmt->close();
 
+        echo "0";
         require '../../vendor/autoload.php'; // Đảm bảo PHPMailer đã được cài đặt
         $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-        
+        echo "1";
         try {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
