@@ -105,7 +105,7 @@ cd "C:\Sites\ec2\"
 ssh -i "haikey2.pem" ubuntu@3.94.208.118
 
 
-cd /var/www/html/we-are-bugs
+cd /var/www/html/taphoathuavan
 git pull origin main
 
 
