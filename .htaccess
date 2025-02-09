@@ -7,13 +7,3 @@ RewriteRule ^Manager/?$ Manager/main.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)/?$ index.php?sname=$1 [L,QSA]
-
-
-
-# Nếu URL đang hiển thị /taphoathuavan/, chuyển hướng về domain gốc để ẩn thư mục taphoathuavan
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/taphoathuavan/ [NC]
-RewriteRule ^taphoathuavan/(.*)$ /$1 [L,R=301]
-
-# Đưa toàn bộ request vào thư mục taphoathuavan mà không thay đổi URL
-RewriteCond %{REQUEST_URI} !^/taphoathuavan/
-RewriteRule ^(.*)$ /taphoathuavan/$1 [L]

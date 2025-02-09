@@ -16,10 +16,17 @@ if ($conn->connect_error) {
 }
 
 // Kiểm tra tham số URL
+// if (!isset($_GET['sname'])) {
+//     header("HTTP/1.0 404 Not Found");
+//     echo "404 Not Found";
+//     exit();
+// }
+
+$storeName = $_GET['sname'];
+
+
 if (!isset($_GET['sname'])) {
-    header("HTTP/1.0 404 Not Found");
-    echo "404 Not Found";
-    exit();
+    $storeName = "taphoathuavan";
 }
 
 $storeName = $_GET['sname'];
