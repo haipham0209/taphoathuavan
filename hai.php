@@ -107,7 +107,7 @@ ssh -i "haikey2.pem" ubuntu@3.94.208.118
 
 cd /var/www/html/taphoathuavan
 sudo git pull origin main
-
+    
 
 
 git clone https://github.com/haipham0209/we-are-bugs.git
