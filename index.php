@@ -29,7 +29,7 @@ if (!isset($_GET['sname'])) {
     $storeName = "taphoathuavan";
 }
 
-$storeName = $_GET['sname'];
+// $storeName = $_GET['sname'];
 
 // Khởi tạo các biến
 $tel = null;
