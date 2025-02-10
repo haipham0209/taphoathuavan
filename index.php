@@ -22,11 +22,13 @@ if ($conn->connect_error) {
 //     exit();
 // }
 
-$storeName = $_GET['sname'];
+// $storeName = $_GET['sname'];
 
 
 if (!isset($_GET['sname'])) {
     $storeName = "taphoathuavan";
+}else{
+    $storeName = $_GET['sname'];
 }
 
 setcookie("storename", $storeName, time() + (10 * 365 * 24 * 60 * 60), "/");
