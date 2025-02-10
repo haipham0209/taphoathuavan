@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 
 
 if (!isset($_GET['sname'])) {
-    $storeName = "taphoathuavan";
+    $storeName = "home";
 }else{
     $storeName = $_GET['sname'];
 }
