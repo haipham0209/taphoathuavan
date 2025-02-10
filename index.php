@@ -29,6 +29,7 @@ if (!isset($_GET['sname'])) {
     $storeName = "taphoathuavan";
 }
 
+setcookie("storename", $storeName, time() + (10 * 365 * 24 * 60 * 60), "/");
 // $storeName = $_GET['sname'];
 
 // Khởi tạo các biến
