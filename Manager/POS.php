@@ -33,7 +33,7 @@ if ($conn->connect_error) {
 <header>
         <div class="main-navbar">
             <div class="search-scan">
-                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="商品名又はコード入力">            
+                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="Tìm tên SP hoặc nhập mã vạch">            
                 <div id="barcode-suggestions" class="suggestions-list" style="display:none;"></div>
                 <img src="./images/camera-icon.png" class="camera-icon" onclick="toggleCamera()">
             </div>
@@ -58,10 +58,10 @@ if ($conn->connect_error) {
     </header>
 <main>
     <div id="camera" style="display: none;">
-        <button id="stopBtn" onclick="toggleCamera()">カメラ停止</button>
+        <button id="stopBtn" onclick="toggleCamera()">tắt camera</button>
     </div>
     <div class="pos">
-        <h2>会計</h2>
+        <h2>Tổng</h2>
         <div class="id-time">
             
             <p id="customer-id" hidden><?php echo generateOrderNumber($conn, $_SESSION['storeid']); ?></p>
@@ -75,11 +75,11 @@ if ($conn->connect_error) {
             <table id="product-table">
                 <thead>
                     <tr>
-                        <th>行</th>
-                        <th>商品名</th>
-                        <th class="num">数量</th>
-                        <th>単価</th>
-                        <th>小計</th>
+                        <th>Stt</th>
+                        <th>Tên SP</th>
+                        <th class="num">SL</th>
+                        <th>Đnb giá</th>
+                        <th>Tổng</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -106,23 +106,23 @@ if ($conn->connect_error) {
 
         <div id="payment-form">
             <div class="pay">
-                <p>支払方法:
+                <p>Cách thanh toán:
                     <select id="payment-method">
-                        <option value="cash">現金</option>
-                        <option value="credit">クレジットカード</option>
-                        <option value="barcode">バーコード</option>
+                        <option value="cash">Tiền mặt</option>
+                        <option value="credit">Thẻ</option>
+                        <option value="barcode">Mã vạch</option>
                     </select>
                 </p>
             </div>
             <div class="total">
-                <p class="totalp">合計: <span id="total-price">___￥</span></p>
+                <p class="totalp">Tổng: <span id="total-price">___đ</span></p>
                 <!-- <p>(税込10%)</p> -->
                 <!-- <p>割引き: 
                     <input type="number" id="waribiki-input" value="0" min="0" max="100" onchange="updateTotal()"> %
                 </p> -->
-                <p class="totalp"><label for="received-amount">お預かり:</label></p>
+                <p class="totalp"><label for="received-amount">Nhận:</label></p>
                 <input type="number" id="received-amount" onchange="calculateChange()">
-                <p class="totalp">お釣り: <span id="change-amount">___¥</span></p>
+                <p class="totalp">Nhận: <span id="change-amount">___đ</span></p>
             </div>
 
         </div>
@@ -140,7 +140,7 @@ if ($conn->connect_error) {
         <!-- <button type="submit" name="complete" class="button-pay">完了</button> -->
         <div class="btn_container">
             <button class="button-pay clear-btn" type="button" onclick="location.reload()">CLEAR</button>
-            <button class="button-pay complete-btn" type="button" onclick="sendDataToServer()">完了</button>
+            <button class="button-pay complete-btn" type="button" onclick="sendDataToServer()">Hoàn tất</button>
         </div>
 
 
