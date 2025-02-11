@@ -19,7 +19,11 @@ include('./php/auth_check.php');
     <div class="container">
         <!-- ロゴ部分 -->
         <div class="logo">
-            <a href="../<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>"><img id="logo" src="<?php echo htmlspecialchars($_SESSION['logopath'] ?? 'default-logo.png'); ?>" alt="Logo" style="width: 240px; height: 80px; padding: 5px; border-radius: 5px;" /></a>
+            <a href="../<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>"><img id="logo" src="<?php echo htmlspecialchars($_SESSION['logopath'] ?? 'default-logo.png'); ?>" alt="Logo" style="width: 240px; height: 80px; padding: 0px; border-radius: 15px;     box-shadow: 
+                                                                                                                                                                                                                        -10px 10px 20px rgba(42, 41, 41, 0.3),  /* Bóng bên trái */
+                                                                                                                                                                                                                        10px 10px 20px rgba(46, 42, 42, 0.3),   /* Bóng bên phải */
+                                                                                                                                                                                                                        0px 15px 25px rgba(0, 0, 0, 0.4);    /* Bóng phía dưới */
+                                                                                                                                                                                                            ;" /></a>
         </div>
 
         <!-- 左側のボタンメニュー -->

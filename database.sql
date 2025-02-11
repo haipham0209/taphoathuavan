@@ -1,7 +1,7 @@
 
 UPDATE user 
 SET status = 'active' 
-WHERE username = 'lan1';
+WHERE username = 'home';
 
 drop table order_details;
 drop table discounts;
