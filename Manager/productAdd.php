@@ -113,11 +113,11 @@ $barcode = isset($_GET['barcode']) ? urldecode($_GET['barcode']) : '';
                 <br>
 
                 <label for="price">価格:</label>
-                <input type="number" id="price" name="price" required min="0" step="0.1" value="<?php echo htmlspecialchars($price); ?>">
+                <input type="number" id="price" name="price" required min="0" value="<?php echo htmlspecialchars($price); ?>">
                 <br>
 
                 <label for="costPrice">仕入れ価格:</label>
-                <input type="number" id="costPrice" name="costPrice" required min="0" step="0.1" value="<?php echo htmlspecialchars($costPrice); ?>">
+                <input type="number" id="costPrice" name="costPrice" required min="0" value="<?php echo htmlspecialchars($costPrice); ?>">
                 <br>
 
                 <label for="description">商品説明:</label>

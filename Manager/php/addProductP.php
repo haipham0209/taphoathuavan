@@ -24,8 +24,8 @@ $stmt->close();
 // Kiểm tra nếu có sản phẩm được thêm vào
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pname = trim($_POST['pname']);
-    $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
-    $costPrice = filter_input(INPUT_POST, 'costPrice', FILTER_VALIDATE_FLOAT);
+    $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_INT);
+    $costPrice = filter_input(INPUT_POST, 'costPrice', FILTER_VALIDATE_INT);
     $description = htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8');
     $stockQuantity = filter_input(INPUT_POST, 'stockQuantity', FILTER_VALIDATE_INT);
     $barcode = trim($_POST['barcode']);

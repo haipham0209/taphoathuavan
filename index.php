@@ -346,13 +346,13 @@ require "resources.php";
                                         <p class="rotated-text">
                                             <span class="product-name"><?= htmlspecialchars($product['pname']) ?></span><br>
                                             <?php if (!is_null($product['discounted_price'])): ?>
-                                                <s><?= number_format($product['price']) ?> ¥</s>
+                                                <s><?= number_format($product['price']) ?> </s>
                                             <?php else: ?>
-                                                <?= number_format($product['price']) ?> ¥
+                                                <?= number_format($product['price']) ?> đ
                                             <?php endif; ?>
 
                                             <?php if (!is_null($product['discounted_price'])): ?>
-                                                <br><span class="discounted-price"><?= number_format($product['discounted_price']) ?> ¥</span>
+                                                <br><span class="discounted-price"><?= number_format($product['discounted_price']) ?> đ</span>
                                             <?php endif; ?>
                                         </p>
                                     </div>
@@ -438,7 +438,7 @@ require "resources.php";
                 </div>
                 <p class="rotated-text">
                     ${product.pname}<br>
-                    ${formattedDiscountedPrice ? `<s>${formattedPrice} ¥</s><br><span class="discounted-price">${formattedDiscountedPrice} ¥</span>` : `${formattedPrice} ¥`}
+                    ${formattedDiscountedPrice ? `<s>${formattedPrice} đ</s><br><span class="discounted-price">${formattedDiscountedPrice} đ</span>` : `${formattedPrice} đ`}
                 </p>
             `;
 
@@ -483,7 +483,7 @@ require "resources.php";
                 </div>
                 <p class="rotated-text">
                     ${product.pname}<br>
-                    ${formattedDiscountedPrice ? `<s>${formattedPrice} ¥</s><br><span class="discounted-price">${formattedDiscountedPrice} ¥</span>` : `${formattedPrice} ¥`}
+                    ${formattedDiscountedPrice ? `<s>${formattedPrice} đ</s><br><span class="discounted-price">${formattedDiscountedPrice} đ</span>` : `${formattedPrice} đ`}
                 </p>
             `;
 
