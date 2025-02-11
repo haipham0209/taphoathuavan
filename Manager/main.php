@@ -29,37 +29,37 @@ include('./php/auth_check.php');
         <!-- 左側のボタンメニュー -->
         <div class="menu">
             <button class="menu-button" onclick="location.href='product.php'">
-                <img src="./images/product-icon.png" alt="商品" class="icon">
-                <span>商品</span>
+                <img src="./images/product-icon.png" alt="Quản lý sản phẩm" class="icon">
+                <span>QL Sản phẩm</span>
             </button>
 
             <button class="menu-button" onclick="location.href='discount.php'">
                 <img src="./images/sale-icon.png" alt="割引" class="icon">
-                <span>割引</span>
+                <span>Giảm giá sp</span>
             </button>
             <button class="menu-button" onclick="location.href='inventory.php'">
                 <img src="./images/stock-icon.png" alt="在庫" class="icon"  >
-                <span>在庫</span>
+                <span>QL tồn kho</span>
             </button>
             <button class="menu-button" onclick="location.href='order.php'">
                 <img src="./images/order-icon.png" alt="注文歴史" class="icon">
-                <span>注文歴史</span>
+                <span>Lịch sử bán </span>
             </button>
             <button class="menu-button"onclick="location.href='setBestSel.php2'"disabled>
                 <img src="./images/customer-icon.png" alt="顧客" class="icon">
-                <span>顧客</span>
+                <span>QL khách hàng</span>
             </button>
             <button class="menu-button" onclick="location.href='setBestSel.phps'"disabled>
                 <img src="./images/bestseller.png" alt="BestSellers" class="icon">
-                <span>ベストセラー</span>
+                <span>Bán chạy</span>
             </button>
             <button class="menu-button" onclick="location.href='POS.php'">
                 <img src="./images/regi.png" alt="レジ" class="icon">
-                <span>レジ</span>
+                <span>Máy tính tiền</span>
             </button>
             <button class="menu-button" onclick="location.href='profileEdit.php'">
                 <img src="./images/profile-icon.png" alt="プロフィール" class="icon">
-                <span>プロフ</span>
+                <span>QL thông tin CH</span>
             </button>
 
         </div>
@@ -74,12 +74,12 @@ include('./php/auth_check.php');
         <!-- 売上與利益顯示 -->
         <div class="financial-info">
             <div class="row">
-                <span class="label">売上：</span>
-                <span id="sales">_____________</span> ¥
+                <span class="label">Doanh thu: </span>
+                <span id="sales">_____________</span> đ
             </div>
             <div class="row">
-                <span class="label">利益：</span>
-                <span id="profit">_____________</span> ¥
+                <span class="label">Lợi nhuận</span>
+                <span id="profit">_____________</span> đ
             </div>
         </div>
         <div class="logout-container" onclick="location.href='StoreLogin.php'">

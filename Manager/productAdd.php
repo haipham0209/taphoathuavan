@@ -49,31 +49,31 @@ $barcode = isset($_GET['barcode']) ? urldecode($_GET['barcode']) : '';
 
 <body>
     <main>
-        <p class="addTitle">商品追加</p>
+        <p class="addTitle">Thêm Sản Phẩm</p>
         <div class="addContainer">
             <form class="proAddForm" action="./php/addProductP.php" method="POST" enctype="multipart/form-data">
                 <!-- Trường chọn ảnh -->
-                <label for="productImage">商品画像:</label>
+                <label for="productImage">Ảnh SP:</label>
                 <img id="imagePreview" src="#" alt="プレビュー画像" style="display:none; max-width:200px; margin-top:10px;">
                 <?php if ($error === 'imgerrort'): ?>
-                    <p style="color: red; margin:0;">画像をアップロードしてください。</p>
+                    <p style="color: red; margin:0;">Tải ảnh SP lên</p>
                 <?php endif; ?>
                 <input type="file" id="productImage" name="productImage" accept="image/*" onchange="previewImage(event)">
                 <br>
                 
 
-                <label for="category">カテゴリー:</label>
+                <label for="category">Loại SP:</label>
                 <div style="display: flex; align-items: center;">
-                    <input type="text" id="categoryText" name="categoryText" placeholder="新しいカテゴリーを入力" value="" />
+                    <input type="text" id="categoryText" name="categoryText" placeholder="Thêm loại SP mới" value="" />
                     <select id="category" name="category" required onchange="updateCategoryText()">
-                        <option value="new" selected>新規作成</option> <!-- Chữ ngắn hơn -->
+                        <option value="new" selected>Thêm mới</option> <!-- Chữ ngắn hơn -->
                         <?php
                         if ($category_result->num_rows > 0) {
                             while ($row = $category_result->fetch_assoc()) {
                                 echo "<option value='" . htmlspecialchars($row['category_id']) . "'>" . htmlspecialchars($row['cname']) . "</option>";
                             }
                         } else {
-                            echo "<option value=''>カテゴリーがありません</option>";
+                            echo "<option value=''>Không có loại SP nào</option>";
                         }
                         ?>
                     </select>
@@ -89,7 +89,7 @@ $barcode = isset($_GET['barcode']) ? urldecode($_GET['barcode']) : '';
                         if (selectedValue === "new") {
                             categoryTextInput.readOnly = false; // Cho phép chỉnh sửa
                             categoryTextInput.value = ""; // Xóa giá trị cũ
-                            categoryTextInput.placeholder = "カテゴリー選択か入力";
+                            categoryTextInput.placeholder = "Chọn loại SP";
                             categoryTextInput.focus(); // Đưa con trỏ vào ô nhập
                         } else {
                             categoryTextInput.readOnly = true; // Khóa ô nhập
@@ -106,30 +106,30 @@ $barcode = isset($_GET['barcode']) ? urldecode($_GET['barcode']) : '';
 
                 <!-- Các trường khác -->
                 <?php if ($error === 'exist'): ?>
-                    <p style="color: red; margin:0;">商品名またはバーコードが既に存在します</p>
+                    <p style="color: red; margin:0;">Tên SP hoặc mã vạch đã tồn tại</p>
                 <?php endif; ?>
-                <label for="pname">商品名:</label>
+                <label for="pname">Tên SP:</label>
                 <input type="text" id="pname" name="pname" required value="<?php echo htmlspecialchars($productname); ?>">
                 <br>
 
-                <label for="price">価格:</label>
+                <label for="price">Giá bán:</label>
                 <input type="number" id="price" name="price" required min="0" value="<?php echo htmlspecialchars($price); ?>">
                 <br>
 
-                <label for="costPrice">仕入れ価格:</label>
+                <label for="costPrice">Giá nhập:</label>
                 <input type="number" id="costPrice" name="costPrice" required min="0" value="<?php echo htmlspecialchars($costPrice); ?>">
                 <br>
 
-                <label for="description">商品説明:</label>
+                <label for="description">Chú thích:</label>
                 <textarea id="description" name="description" rows="4" cols="50" required><?php echo htmlspecialchars($description); ?></textarea>
                 <br>
 
-                <label for="stockQuantity">在庫数量:</label>
+                <label for="stockQuantity">SL nhập:</label>
                 <input type="number" id="stockQuantity" name="stockQuantity" required min="1" value="<?php echo htmlspecialchars($stockQuantity); ?>">
                 <br>
 
                 <?php if ($error === 'exist'): ?>
-                    <p style="color: red; margin:0;">商品名またはバーコードが既に存在します</p>
+                    <p style="color: red; margin:0;">Tên SP hoặc mã vạch đã tồn tại</p>
                 <?php endif; ?>
                 <script>
                     // Lắng nghe sự kiện 'barcodeDetected' để cập nhật mã vào ô input
@@ -138,17 +138,17 @@ $barcode = isset($_GET['barcode']) ? urldecode($_GET['barcode']) : '';
                         document.getElementById('barcode').value = barcode;
                     });
                 </script>
-                <label for="barcode">バーコード:</label>
+                <label for="barcode">Mã vạch:</label>
                 <input type="text" id="barcode" name="barcode" required value="<?php echo htmlspecialchars($barcode); ?>">
-                <button type="button" id="start-scan">カメラでスキャン</button>
+                <button type="button" id="start-scan">Quét mã vạch bằng Camera</button>
                 <!-- Div để hiển thị camera -->
                 <!-- <div id="camera" style="display: none;"></div> -->
                 <div id="overlay" style="display: none;" onclick="toggleScanner()"></div>
                 <div id="camera" style="display: none;">
-                    <button id="stopBtn"type="button" onclick="toggleScanner()">カメラ停止</button>
+                    <button id="stopBtn"type="button" onclick="toggleScanner()">tắt Camera</button>
                 </div>
 
-                <button type="submit">商品を追加する</button>
+                <button type="submit">Thêm SP</button>
             </form>
             <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center;">
                 <div id="lottie"></div>

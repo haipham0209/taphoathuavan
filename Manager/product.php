@@ -61,14 +61,14 @@ $product_result = $product_stmt->get_result();
     <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
     <script src="./scripts/cameraScan.js"></script>
     <script src="./scripts/search_productphp.js"></script>
-    <title>商品管理</title>
+    <title>Quản Lý sản phẩm</title>
 </head>
 
 <body>
     <header>
         <div class="main-navbar">
             <div class="search-scan">
-                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="商品名又はコード入力">
+                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="Nhập tên sản phẩm hoặc mã vạch">
                 <div id="barcode-suggestions" class="suggestions-list" style="display:none;"></div>
                 <img src="./images/camera-icon.png" class="camera-icon" onclick="toggleCamera()">
             </div>
@@ -81,9 +81,10 @@ $product_result = $product_stmt->get_result();
     <main>
         <div id="overlay" style="display: none;" onclick="toggleCamera()"></div>
         <div id="camera" style="display: none;">
-            <button id="stopBtn" onclick="toggleCamera()">カメラ停止</button>
+            <!-- <button id="stopBtn" onclick="toggleCamera()">カメラ停止</button> -->
+            <button id="stopBtn" onclick="toggleCamera()">Tắt camera</button>
         </div>
-        <p class="title">商品管理</p>
+        <p class="title">Quản lý sản phẩm</p>
 
         <!-- Category -->
         <div class="category">
@@ -128,20 +129,20 @@ $product_result = $product_stmt->get_result();
                         </a>
                         <img src="' . htmlspecialchars($productImagePath, ENT_QUOTES, 'UTF-8') . '" alt="Product Image">
                         <div class="product-info">
-                            <p><strong>名前：</strong>' . htmlspecialchars($product['pname'], ENT_QUOTES, 'UTF-8') . '</p>
-                            <p class="productCategory"><strong>カテゴリー：</strong>' . htmlspecialchars($product['cname'], ENT_QUOTES, 'UTF-8') . '</p>
-                            <p><strong>原価：</strong>' . htmlspecialchars($product['costPrice'], ENT_QUOTES, 'UTF-8') . '</p>';
+                            <p><strong>Tên sp: </strong>' . htmlspecialchars($product['pname'], ENT_QUOTES, 'UTF-8') . '</p>
+                            <p class="productCategory"><strong>Loại sp: </strong>' . htmlspecialchars($product['cname'], ENT_QUOTES, 'UTF-8') . '</p>
+                            <p><strong>Giá nhập hàng: </strong>' . htmlspecialchars($product['costPrice'], ENT_QUOTES, 'UTF-8') . '</p>';
                     // 割引がある場合、割引価格を表示
                     if ($discounted_price !== null) {
                         echo '
-                                <p style="color: red;"><strong>値段：</strong>' . htmlspecialchars($priceToDisplay, ENT_QUOTES, 'UTF-8') . '</p>
-                                <p class="discountNotice" style="color: red;">割引中</p>';
+                                <p style="color: red;"><strong>Giá bán: </strong>' . htmlspecialchars($priceToDisplay, ENT_QUOTES, 'UTF-8') . '</p>
+                                <p class="discountNotice" style="color: red;">Đang giảm giá</p>';
                     } else {
-                        echo '<p><strong>値段：</strong>' . htmlspecialchars($priceToDisplay, ENT_QUOTES, 'UTF-8') . '</p>';
+                        echo '<p><strong>Giá bán: </strong>' . htmlspecialchars($priceToDisplay, ENT_QUOTES, 'UTF-8') . '</p>';
                     }
-                    echo ' <p><strong>説明：</strong>' . htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8') . '</p>
+                    echo ' <p><strong>chú thích: </strong>' . htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8') . '</p>
                         </div>
-                        <div class="stock">在庫: ' . htmlspecialchars($product['stock_quantity'], ENT_QUOTES, 'UTF-8') . '</div>
+                        <div class="stock">SL: ' . htmlspecialchars($product['stock_quantity'], ENT_QUOTES, 'UTF-8') . '</div>
                     </div>';
                 }
             } else {

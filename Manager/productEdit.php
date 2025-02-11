@@ -66,7 +66,7 @@ if ($category_name_result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品編集</title>
+    <title>Sửa thông tin SP</title>
     <!-- <link rel="stylesheet" href="../styles/All.css"> -->
     <link rel="stylesheet" href="./styles/productEdit.css">
     <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
@@ -76,7 +76,7 @@ if ($category_name_result->num_rows > 0) {
 <body>
     <main>
         <div class="head">
-        <h3>商品編集</h3>
+        <h3>Sửa SP</h3>
         <h3><a href="main.php"><img class="home" src="./images/home.png" alt="Home Mana"></a></h3>
         </div>
         <div class="addContainer">
@@ -85,7 +85,7 @@ if ($category_name_result->num_rows > 0) {
             <img src="../images/delete-icon.png" alt="削除" id="deleteIcon" onclick="deleteProduct()">
                 <!-- Trường chọn ảnh -->
                 <div class="imgDiv">
-                    <label for="productImage">商品画像:</label>
+                    <label for="productImage">Ảnh SP:</label>
                     <div class="imageContainer">
                         <img id="imagePreview" src="../<?= htmlspecialchars($product['productImage']); ?>" alt="プレビュー画像">
                     </div>
@@ -97,11 +97,11 @@ if ($category_name_result->num_rows > 0) {
 
 
                 <!-- Category -->
-                    <label for="category">カテゴリー:</label>
+                    <label for="category">Loại SP:</label>
     <div style="display: flex; align-items: center;">
         <input type="text" id="categoryText" name="categoryText" placeholder="選択したカテゴリー"required value="<?= htmlspecialchars($category_name); ?>" readonly />
         <select id="category" name="category" required onchange="updateCategoryText()">
-            <option value="">選択してください</option>
+            <option value="">Chọn loại SP</option>
             <?php
             if ($category_result->num_rows > 0) {
                 while ($row = $category_result->fetch_assoc()) {
@@ -112,7 +112,7 @@ if ($category_name_result->num_rows > 0) {
                 echo "<option value=''>カテゴリーがありません</option>";
             }
             ?>
-            <option value="new">+ 新しいカテゴリーを作成</option>
+            <option value="new">+ Thêm loại SP</option>
         </select>
     </div>
     <br>
@@ -127,7 +127,7 @@ if ($category_name_result->num_rows > 0) {
             if (selectedValue === "new") {
                 categoryTextInput.readOnly = false; // Bỏ khóa
                 categoryTextInput.value = ""; // Xóa giá trị cũ
-                categoryTextInput.placeholder = "新しいカテゴリーを入力";
+                categoryTextInput.placeholder = "Nhập loại SP mới";
                 categoryTextInput.focus(); // Đưa con trỏ vào ô nhập
             } else {
                 // Nếu chọn mục khác, khóa ô nhập và hiển thị giá trị từ dropdown
@@ -139,34 +139,34 @@ if ($category_name_result->num_rows > 0) {
 
 
                 <!-- Các trường khác -->
-                <label for="pname">商品名:</label>
+                <label for="pname">Tên SP:</label>
                 <input type="text" id="pname" name="pname" required value="<?= htmlspecialchars($product['pname']); ?>" >
                 <br>
 
-                <label for="price">価格:</label>
+                <label for="price">Giá bán:</label>
                 <input type="number" id="price" name="price" required value="<?= htmlspecialchars($product['price']); ?>" required min="0" step="0.1">
                 <br>
 
-                <label for="costPrice">仕入れ価格:</label>
+                <label for="costPrice">Giá nhập:</label>
                 <input type="number" id="costPrice" name="costPrice"required value="<?= htmlspecialchars($product['costPrice']); ?>" required min="0" step="0.1">
                 <br>
 
-                <label for="description">商品説明:</label>
+                <label for="description">Chú thích:</label>
                 <textarea id="description" name="description" rows="4" cols="50" required><?= htmlspecialchars($product['description']); ?></textarea>
                 <br>
 
                 <!-- Số lượng tồn kho -->
-                <label for="stockQuantity">在庫数量:</label>
+                <label for="stockQuantity">SL:</label>
                 <input type="number" id="stockQuantity" name="stockQuantity"required value="<?= htmlspecialchars($product['stock_quantity']); ?>" required min="1">
                 <br>
 
-                <label for="barcode">バーコード:</label>
+                <label for="barcode">mã vạch:</label>
                 <input type="text" id="barcode" name="barcode" required value="<?= htmlspecialchars($product['barcode']); ?>" readonly>
                 <!-- <button type="button" id="start-scan">カメラでスキャン</button> -->
                 <!-- Div để hiển thị camera -->
                 <!-- <div id="camera" style="display: none;"></div> -->
 
-                <button type="submit">商品情報を更新する</button>
+                <button type="submit">Sửa đổi </button>
                  <!-- Thêm trường hidden để gửi productid -->
                  <input type="hidden" name="productid" value="<?= htmlspecialchars($product['productid']); ?>">
             </form>
@@ -176,7 +176,7 @@ if ($category_name_result->num_rows > 0) {
     <script>
         // Xóa sản phẩm
         function deleteProduct() {
-            if (confirm('商品を完全に削除します。よろしいですか')) {
+            if (confirm('Sản phẩm sẽ bị xóa hoàn toàn')) {
                 window.location.href = './php/deleteProduct.php?id=<?= $productid ?>';
             }
         }
