@@ -78,7 +78,7 @@ function fetchOrderDetail(orderNumber, orderRow) {
             // 親の行の幅を取得
             const parentWidth = orderRow.offsetWidth;
 
-            let detailsHTML = `<td colspan="5"><div class="order-details-container" style="width:${parentWidth}px;"><table><thead><tr><th style="text-align: center;">商品名</th><th style="text-align: center;">数量</th><th style="text-align: center;">単価</th><th style="text-align: center;">小計</th></tr></thead><tbody>`;
+            let detailsHTML = `<td colspan="5"><div class="order-details-container" style="width:${parentWidth}px;"><table><thead><tr><th style="text-align: center;">Tên SP</th><th style="text-align: center;">SL</th><th style="text-align: center;">Đơn giá</th><th style="text-align: center;">Tổng</th></tr></thead><tbody>`;
 
             orderDetails.forEach(detail => {
                 detailsHTML += `
@@ -95,7 +95,7 @@ function fetchOrderDetail(orderNumber, orderRow) {
             if (orderDetails[0].discount > 0) {
                 detailsHTML += `
                     <tr>
-                        <td colspan="2" style="text-align: center; font-weight: bold; color: red;">割引合計</td>
+                        <td colspan="2" style="text-align: center; font-weight: bold; color: red;">Tổng giảm</td>
                         <td colspan="2" style="text-align: center; color: red;">-${orderDetails[0].discount}</td>
                     </tr>
                 `;
@@ -104,11 +104,11 @@ function fetchOrderDetail(orderNumber, orderRow) {
             // 合計と預かりを二行目に追加
             detailsHTML += `
                 <tr>
-                    <td colspan="2" style="text-align: center; font-weight: bold;">合計</td>
+                    <td colspan="2" style="text-align: center; font-weight: bold;">Tổng</td>
                     <td colspan="2" style="text-align: center;">${orderDetails[0].total_price}</td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: center; font-weight: bold;">お預かり</td>
+                    <td colspan="2" style="text-align: center; font-weight: bold;">Nhận</td>
                     <td colspan="2" style="text-align: center;">${orderDetails[0].received_amount}</td>
                 </tr>
             `;

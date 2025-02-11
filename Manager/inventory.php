@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/inventory.css">
-    <title>在庫</title>
+    <title>QL Tồn kho</title>
 </head>
 <body>
     <div class="container">
-        <h1>在庫管理</h1>
+        <h1>QL tồn kho</h1>
         <!-- <div class="bar">
             <h1>在庫管理</h1>
             <img src="./images/back_button2.png" alt="Back Icon" onclick="location.href='main.php'">
         </div> -->
-        <input type="text" id="search" placeholder="商品を探" onkeyup="searchProducts()">
+        <input type="text" id="search" placeholder="tìm sản phẩm" onkeyup="searchProducts()">
         <div class="table-container">
             <table id="productTable">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>商品コード</th>
-                        <th>商品名</th>
-                        <th>在庫</th>
+                        <th>Mã Sp</th>
+                        <th>Tên SP</th>
+                        <th>Số lượng</th>
                     </tr>
                 </thead>
                 <tbody>

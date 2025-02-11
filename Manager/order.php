@@ -41,14 +41,14 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./styles/order.css">
-    <title>Order History</title>
+    <title>Lịch sử bán hàng</title>
 </head>
 
 <body>
     <header>
         <div class="main-navbar">
             <div class="search-scan">
-                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="商品名又はコード入力">
+                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="Quét barcode hoặc tìm kiếm">
                 <div id="barcode-suggestions" class="suggestions-list" style="display:none;"></div>
                 <img src="./images/camera-icon.png" class="camera-icon" onclick="toggleCamera()">
             </div>
@@ -58,20 +58,20 @@ $conn->close();
         </div>
     </header>
     <main>
-        <p class="title">注文履歴</p>
+        <p class="title">Lịch sử bán hàng</p>
         <div class="date-control">
             <button id="prev-date" class="date-button">◀</button>
             <input type="date" id="date-picker" class="date-picker">
             <button id="next-date" class="date-button">▶</button>
         </div>
-        <p id="no-data-message" style="text-align: center; display:none;">データがありません。</p>
+        <p id="no-data-message" style="text-align: center; display:none;">Không có dữ liệu</p>
         <table class="order-list">
             <thead>
                 <tr>
-                    <th>番号</th>
-                    <th>注文番号</th>
-                    <th>数量</th>
-                    <th>金額</th>
+                    <th>STT</th>
+                    <th>Mã đơn hàng</th>
+                    <th>SL</th>
+                    <th>Tổng</th>
                 </tr>
             </thead>
             <tbody id="order-list-body">
