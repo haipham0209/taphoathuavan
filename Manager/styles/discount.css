@@ -276,7 +276,7 @@
 
     .product-info .discount {
         margin: 5px auto;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .product-card .discounted-price {
@@ -394,13 +394,28 @@
         align-items: center;
     }
 
+    .dialog {
+        position: fixed; /* Cố định dialog trên màn hình */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Tạo nền mờ phía sau */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Đảm bảo dialog nổi trên các phần khác */
+    }
+    
     .dialog-content {
         background: #fff;
         padding: 20px;
         border-radius: 8px;
         text-align: center;
         width: 300px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng */
     }
+    
 
     .dialog-content p {
         margin: 10px 0;

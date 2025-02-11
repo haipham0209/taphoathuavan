@@ -60,14 +60,14 @@ $product_result = $product_stmt->get_result();
     <link rel="stylesheet" href="./styles/discount.css">
     <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.min.js"></script>
     <script src="./scripts/cameraScan.js"></script>
-    <title>割引</title>
+    <title>Giảm giá</title>
 </head>
 
 <body>
 <header>
         <div class="main-navbar">
             <div class="search-scan">
-                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="商品名又はコード入力">            
+                <input type="text" name="barcode" id="barcode-input" class="search-bar" placeholder="Nhập tên SP hoặc mã vạch">            
                 <div id="barcode-suggestions" class="suggestions-list" style="display:none;"></div>
                 <img src="./images/camera-icon.png" class="camera-icon" onclick="toggleCamera()">
             </div>
@@ -92,9 +92,9 @@ $product_result = $product_stmt->get_result();
     </header>
     <main>
         <div id="camera" style="display: none;">
-            <button id="stopBtn" onclick="toggleCamera()">カメラ停止</button>
+            <button id="stopBtn" onclick="toggleCamera()">Tắt Camera</button>
         </div>
-        <p class="title">商品割引管理</p>
+        <p class="title">QL giảm giá SP</p>
 
         <!-- Category -->
         <div class="category">
@@ -133,18 +133,19 @@ $product_result = $product_stmt->get_result();
                     if (!is_null($product['discounted_price'])) {
                         echo '
                 <div class="sale-label">
-                    <img src="./images/sale.png" alt="セール中">
+                    <img src="./images/sale.png" alt="Đang giảm giá">
                 </div>';
                     }
 
                     echo '
                 <img src="' . htmlspecialchars($productImagePath, ENT_QUOTES, 'UTF-8') . '" alt="Product Image">
                 <div class="product-info">
-                    <p><strong>名前：</strong>' . htmlspecialchars($product['pname'], ENT_QUOTES, 'UTF-8') . '</p>
-                    <p class="productCategory"><strong>カテゴリー：</strong>' . htmlspecialchars($product['cname'], ENT_QUOTES, 'UTF-8') . '</p>
-                    <p><strong>元値段：</strong>' . htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') . '</p>
+                    <p><strong>Tên Sp: </strong>' . htmlspecialchars($product['pname'], ENT_QUOTES, 'UTF-8') . '</p>
+                    <p class="productCategory"><strong>Loại SP:</strong>' . htmlspecialchars($product['cname'], ENT_QUOTES, 'UTF-8') . '</p>
+                    <p><strong>Giá gốc: </strong><span class="product-price" data-price="' . htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($product['price'], ENT_QUOTES, 'UTF-8') . '</span></p>
+
                     <div class="discount">
-                        <span><strong>割引後の値段：</strong></span> 
+                        <span><strong>Giá sau khi giảm:</strong></span> 
                         <span class="discounted-price">' . $discountedPrice . '</span>
                     </div>
                 </div>
@@ -225,16 +226,16 @@ $product_result = $product_stmt->get_result();
 
         <div id="product-dialog" class="dialog" style="display: none;">
             <div class="dialog-content">
-                <p><strong>商品名：</strong><span id="dialog-product-name"></span></p>
-                <p><strong>値段：</strong><span id="dialog-product-price"></span></p>
-                <p><strong>割引率：</strong>
-                    <input type="number" id="discount-rate" placeholder="割引率 (%)" min="0" max="100" step="1">
+                <p><strong>Tên SP:</strong><span id="dialog-product-name"></span></p>
+                <p><strong>Giá bán:</strong><span id="dialog-product-price"></span></p>
+                <p><strong>Giảm giá:</strong>
+                    <input type="number" id="discount-rate" placeholder="Giảm (%)" min="0" max="100" step="1">
                     <strong>%</strong>
                 </p>
-                <p><strong>割引後の値段：</strong>¥<span id="discounted-price"></span></p>
-                <button id="apply-discount">確定</button>
-                <button id="cancel-discount-btn">割引キャンセル</button>
-                <button id="cancel-discount">キャンセル</button>
+                <p><strong>Giá sau khi giảm: </strong><span id="discounted-price"></span> đ</p>
+                <button id="apply-discount">Xác nhận</button>
+                <button id="cancel-discount-btn">Hủy giảm giá</button>
+                <button id="cancel-discount">hủy</button>
             </div>
         </div>
     </main>

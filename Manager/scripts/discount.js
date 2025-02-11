@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // 商品名と値段を取得
             const productName = card.querySelector('.product-info p:nth-child(1)').textContent.replace('名前：', '').trim();
             const productPriceText = card.querySelector('.product-info p:nth-child(3)').textContent.replace('元値段：', '').trim();
-            const productPrice = parseFloat(productPriceText);
+            // const productPrice = parseFloat(productPriceText);
+
+            let productPrice = this.querySelector('.product-price').dataset.price; 
 
             // 商品価格が有効かどうかチェック
             if (isNaN(productPrice)) {
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const discountedPrice = currentProduct.productPrice * (1 - rate / 100);
             discountedPriceElem.textContent = discountedPrice.toFixed(2);
         } else {
-            discountedPriceElem.textContent = '無効な割引率';
+            discountedPriceElem.textContent = 'Không hợp lệ';
         }
     });
 
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     applyDiscountButton.addEventListener('click', function () {
         const discountRate = parseFloat(discountRateInput.value);
         if (isNaN(discountRate) || discountRate < 0 || discountRate > 100) {
-            alert('割引率を正しく入力してください');
+            alert('không hợp lệ');
             return;
         }
 
@@ -83,11 +85,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
                     const jsonData = JSON.parse(data); // JSON にパース
                     if (jsonData.success) {
-                        alert('割引が適用されました！');
+                        alert('Áp dụng thnahf công');
                         closeDialog();
                         location.reload();
                     } else {
-                        alert('割引の適用に失敗しました: ' + jsonData.message);
+                        alert('Áp dụng thất bại: ' + jsonData.message);
                     }
                 } catch (error) {
                     console.error('JSON パースエラー:', error);
@@ -116,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('dialog-product-price').textContent = productPrice;
 
             // ダイアログを表示
-            document.getElementById('product-dialog').style.display = 'block';
+            document.getElementById('product-dialog').style.display = 'flex';
         });
     });
 
@@ -148,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (!confirm('本当に割引をキャンセルしますか？')) {
+        if (!confirm('Hủy giảm giá')) {
             return;
         }
 
@@ -165,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('割引がキャンセルされました');
+                    alert('Đã hủy giám giá');
                     document.getElementById('discount-rate').value = '';
                     document.getElementById('discounted-price').textContent = '';
                     updateProductUI(selectedProductId);
@@ -197,4 +199,11 @@ document.addEventListener('DOMContentLoaded', function () {
             closeDialog();
         }
     });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            // document.getElementById("product-dialog").style.display = "none";
+            closeDialog();
+        }
+    });
+    
 });
