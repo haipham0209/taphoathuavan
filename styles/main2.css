@@ -240,7 +240,7 @@
     .product-image {
         width: 100%; /* Đặt chiều rộng bằng 100% để ảnh luôn chiếm hết không gian */
         height: 200px; /* Cố định chiều cao của ảnh */
-        object-fit: cover; /* Giữ tỷ lệ hình ảnh và cắt phần dư thừa nếu cần */
+        object-fit: contain; /* Giữ tỷ lệ hình ảnh và cắt phần dư thừa nếu cần */
         border-radius: 8px; /* Thêm bo góc để hình ảnh có kiểu dáng đẹp */
     }
     .image-wrapper {

@@ -115,6 +115,14 @@ git clone https://github.com/haipham0209/we-are-bugs.git
 git clone https://github.com/haipham0209/taphoathuavan.git
 
 
+sudo chown -R www-data:www-data /var/www/html/taphoathuavan/Manager/uploads
+sudo chmod -R 775 /var/www/html/taphoathuavan/Manager/uploads
+
+sudo chown -R www-data:www-data /var/www/html/taphoathuavan/Manager/storeproductImg
+sudo chmod -R 775 /var/www/html/taphoathuavan/Manager/storeproductImg
+
+
+
 
 
 
